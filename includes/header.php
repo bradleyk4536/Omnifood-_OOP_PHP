@@ -25,3 +25,5 @@
 		 <![endif]-->
 	</head>
 <body>
+<!--	NAVIGATION SECTION-->
+<?php include "includes/navigation.php"; ?>

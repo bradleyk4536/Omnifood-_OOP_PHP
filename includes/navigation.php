@@ -19,10 +19,11 @@
 				  <li class="active"><a href="#">Home</a></li>
 				  <li><a href="resources.html">Resources</a></li>
 				  <li><a href="blog.html">Blog</a></li>
-				  <li><a href="contact.html">Signup</a></li>
+				  <li><a href="contact.html" data-toggle="modal" data-target="#contact_modal">Contact</a></li>
 				</ul>
 			 </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
 	</div>
 </header>
+<?php include "includes/contact_modal.php"; ?>

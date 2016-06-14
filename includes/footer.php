@@ -10,7 +10,7 @@
 						<li class="active"><a href="#">Home</a></li>
 			  <li><a href="resources.html">Resources</a></li>
 			  <li><a href="blog.html">Blog</a></li>
-			  <li><a href="contact.html">Signup</a></li>
+			  <li><a href="#" data-toggle="modal" data-target="#contact_modal">Contact</a></li>
 					</ul>
 				</nav>
 			</div>
