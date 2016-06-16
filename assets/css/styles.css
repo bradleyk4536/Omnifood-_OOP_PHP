@@ -272,4 +272,13 @@ footer { background-color: #333; font-size: 80%; }
     transition: color 0.2s;
 }
 
+/*SEE OUR MENU PAGE*/
+
+.jumbotron { margin-top: 50px; }
+/*#menu { background: url(../images/tile.jpg) top left repeat; }*/
+#menu .row { max-width: 1240px; margin-left: 10px; }
+.dish p { font-size: 90%; }
+
+/*ITEM DETAIL PAGE */
+
 
