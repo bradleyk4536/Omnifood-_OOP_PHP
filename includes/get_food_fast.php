@@ -29,6 +29,6 @@
 		</div><!--end row-->
 	</div><!--end container-->
 	<div class="menu_button text-center">
-		<a href="menu.php" class="btn btn-info btn-lg">See our menu</a>
+		<a href="menu.php" class="btn btn-info btn-lg btn-color">See our menu</a>
 	</div>
 </section>

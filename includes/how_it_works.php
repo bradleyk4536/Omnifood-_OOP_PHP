@@ -4,7 +4,7 @@
 			<h2>How It Works &mdash; Simple as 1, 2, 3</h2>
 		</div>
 		<div class="row">
-			<div class="col-sm-6">
+			<div class="col-sm-6 phone">
 				<img src="assets/images/app-iPhone.png" alt="" class="app-screen js--wp-2">
 			</div>
 			<div class="col-sm-6">
