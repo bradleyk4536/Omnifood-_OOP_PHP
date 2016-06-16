@@ -2,7 +2,7 @@
 	<div class="container clear-fix">
 		<div class="row">
 			<div class="col-sm-5">
-				<img src="assets/images/logo.png" alt="">
+				<img class="hero-image" src="assets/images/logo-white.png" alt="">
 			</div>
 			<div class="hero-text col-sm-7">
 			<h1>Goodbye Junk Food</h1>

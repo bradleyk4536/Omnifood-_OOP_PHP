@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-3">
-				<a class="navbar-brand" href="#"><i class="ion-android-restaurant section_icon"></i> Omnifoods</a>
+				<a class="navbar-brand" href="#"><i class="ion-android-restaurant"></i> Omnifoods</a>
 			</div>
 			<div class="footer_nav pull-right col-sm-6">
 				<nav>
