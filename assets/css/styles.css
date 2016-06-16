@@ -281,4 +281,9 @@ footer { background-color: #333; font-size: 80%; }
 
 /*ITEM DETAIL PAGE */
 
+.leave-comment p {
+	margin: 40px 0 0 ;
+	padding: 20px 0 0;
+	border-top: 1px solid #eee;
 
+}
