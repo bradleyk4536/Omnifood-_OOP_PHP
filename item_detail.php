@@ -5,7 +5,9 @@
 			<div class="col-sm-8">
 				<article>
 					<div class="dish_image">
-						<img src="assets/images/2.jpg" alt="">
+						<div class="thumbnail">
+							<img src="assets/images/2.jpg" alt="">
+						</div>
 					</div>
 					<div class="ingredients">
 						<h3>Ingredients</h3>
@@ -94,20 +96,23 @@
 			<!--				SIDE BAR-->
 					<aside class="col-sm-4">
 						<div class="widget">
-							<h4>Join our mailing list</h4>
-							<p>Keep up to date with the latest news, and we'll <strong>seny you special as a thank you.</strong></p>
-							<button class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#myModal">Subscribe</button>
+							<h4>Subscribe To Our Great Newsletter</h4>
+							<p>Keep up to date with the latest news.</p>
+							<button class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#newsletter_modal">Subscribe now</button>
+						</div>
+						<div class="widget">
+							<h4>Contact Us</h4>
+							<p>Have a question or suggestion. We will love to hear from you.</p>
+							<button class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#contact_modal">Send Message</button>
 						</div>
 						<div class="widget">
 							<form action="" role="form" class="search-form">
 								<label for="sidebar-search" class="sr-only">Search Blog</label>
 								<input type="text" id="sidebar-search" placeholder="Search the blog">
+
 							</form>
 						</div>
-						<div class="widget">
-							<h4>About Bootstrap to WordPress</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid natus obcaecati omnis veritatis accusamus aspernatur, quam est ea quaerat autem inventore, fugit accusantium aliquam assumenda, enim sint adipisci ipsum esse.</p>
-						</div>
+<!--
 						<div class="widget">
 							<h4>Recent Post</h4>
 							<ul>
@@ -129,8 +134,10 @@
 								<li><a href="">Blog Post 1</a></li>
 							</ul>
 						</div>
+-->
 					</aside>
 		</div>
 	</div>
 </section>
+<?php include "includes/newsletter_modal_content.php"; ?>
 <?php include "includes/footer.php"; ?>

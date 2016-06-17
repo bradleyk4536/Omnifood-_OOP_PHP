@@ -4,7 +4,7 @@
 <!--	HERO SECTION-->
 <?php include "includes/hero.php"; ?>
 <!--  NEWSLETTER MODAL SECTION-->
-<?php include "includes/newsletter_modal.php"; ?>
+<?php include "includes/newsletter.php"; ?>
 <!--	GET FOOD FAST SECTION-->
 <?php include "includes/get_food_fast.php"; ?>
 <!--	HOW IT WORKS SECTION-->

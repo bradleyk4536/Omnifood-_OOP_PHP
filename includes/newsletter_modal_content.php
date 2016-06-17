@@ -1,17 +1,5 @@
-<!--DISPLAYED ON LANDING PAGE-->
-<section id="newsletter">
-	<div class="container">
-		<div class="row text-center">
-			<div class="col-sm-6">
-				<p class="lead"><strong>Subscribe to our great newsletter</strong></p>
-			</div>
-			<div class="col-sm-4">
-				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newsletter_modal">Subscribe now</button>
-			</div>
-		</div>
-	</div>
 <!--	MODAL FORM NOT DISPLAYED UNTIL BUTTON IS SELECTED-->
-	<div class="modal fade" id="newsletter_modal">
+<div class="modal fade" id="newsletter_modal">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -47,4 +35,3 @@
 		</div>
 	</div>
 </div>
-</section>
