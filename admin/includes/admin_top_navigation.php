@@ -114,5 +114,5 @@
                     </ul>
                 </li>
             </ul>
-<?php include "admin_right_navigation.php"; ?>
+<?php include "admin_left_navigation.php"; ?>
         </nav>

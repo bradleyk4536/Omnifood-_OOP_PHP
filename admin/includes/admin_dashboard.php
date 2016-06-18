@@ -1,3 +1,4 @@
+<?php $users = User::get_count(); ?>
 <div class="row">
 	<div class="col-lg-3 col-md-6">
 		<div class="panel panel-primary">
@@ -51,7 +52,7 @@
 							 <i class="fa fa-user fa-5x"></i>
 						</div>
 						<div class="col-xs-9 text-right">
-							 <div class="huge">8</div>
+							 <div class="huge"><?php echo $users->rowCount(); ?></div>
 							 <div>Users</div>
 						</div>
 				  </div>
