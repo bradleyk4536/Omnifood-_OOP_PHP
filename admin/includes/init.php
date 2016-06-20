@@ -4,7 +4,7 @@
 	defined('SITE_ROOT') ? null : define('SITE_ROOT', DS . 'xampp' . DS . 'htdocs' . DS . 'Omnifoods');
 	defined('INCLUDES_PATH') ? null : define('INCLUDES_PATH', SITE_ROOT.DS . 'admin' . DS . 'includes');
 
-//	require_once(INCLUDES_PATH.DS."functions.php");
+	require_once(INCLUDES_PATH.DS."functions.php");
 	require_once(INCLUDES_PATH.DS."db_config.php");
 	require_once(INCLUDES_PATH.DS."db_crud.php");
 	require_once(INCLUDES_PATH.DS."db_object.php");

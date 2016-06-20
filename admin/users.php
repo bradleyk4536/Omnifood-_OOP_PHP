@@ -1,6 +1,6 @@
 <?php include "includes/admin_header.php"; ?>
 <div id="wrapper">
-	<?php $users = User::find_all(); ?>
+	<?php $users = User::read_all(); ?>
 <?php include "includes/admin_top_navigation.php"; ?>
 <?php include "includes/admin_footer.php"; ?>
 <div id="page-wrapper">
@@ -27,8 +27,8 @@
 										<td><?php echo $user->user_id; ?> </td>
 										<td><?php echo $user->username; ?>
 										<div class="action_link">
-											<a href="edit_user.php?id=<?php echo $user->id ?>">Edit</a>
-											<a href="delete_user.php?id=<?php echo $user->id ?>">Delete</a>
+											<a href="update_user.php?id=<?php echo $user->user_id ?>">Edit</a>
+											<a href="delete_user.php?id=<?php echo $user->user_id ?>">Delete</a>
 										</div>
 										</td>
 										<td><?php echo $user->first_name; ?> </td>
