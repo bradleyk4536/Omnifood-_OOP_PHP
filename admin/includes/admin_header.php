@@ -19,6 +19,7 @@
 		<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 <!--	 CUSTOM STYLING-->
 	 <link href="css/sb-admin.css" rel="stylesheet">
+	 <script src="../assets/js/jquery-2.1.1.min.js"></script>
 		 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		 <!--[if lt IE 9]>

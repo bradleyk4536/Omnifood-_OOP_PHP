@@ -1,7 +1,7 @@
 <?php include "includes/admin_header.php"; ?>
  <div id="wrapper">
 	<?php include "includes/admin_top_navigation.php"; ?>
-	<?php include "includes/admin_footer.php"; ?>
+
   <div id="page-wrapper">
 		<div class="container-fluid">
 			 <!-- Page Heading -->
@@ -24,3 +24,4 @@
   </div><!-- /#page-wrapper -->
 </div>
     <!-- /#wrapper -->
+<?php include "includes/admin_footer.php"; ?>

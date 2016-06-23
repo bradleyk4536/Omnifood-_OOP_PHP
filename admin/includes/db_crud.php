@@ -2,7 +2,7 @@
 /* CREATE A DATABASE RECORD */
 
 class Db_Crud {
-		public $message;
+
 
 
 /* GET SPECIFIC RECORD FROM TABLE */
@@ -36,8 +36,19 @@ public static function find_by_id($id) {
 		return $result;
 	}
 
+	public static function deleteRecord($superGlobal) {
+		global $database;
+		$get_id = $superGlobal;
+		$result = $database->connection->prepare( static::$delete_sql );
+
+		if ($result) { $execute = $result->execute(['id' => $get_id ]); } else { $execute = false; }
+
+		return $execute;
+
+	}
+
 /* USE FOR INTERNAL DATABASE ONLY */
-	public static function find_by_query($sql) {
+	private function find_by_query($sql) {
 		global $database;
 		$result = $database->query_db($sql);
 		$obj_result = $result->fetchAll(PDO::FETCH_OBJ);
@@ -51,22 +62,39 @@ public static function find_by_id($id) {
 		return $result;
 	}
 
-/*VALIDATION INPUT TEXT ALLOW NUMBER, CHARACTERS AND WHITESPACE*/
+/* SANITIZE STRING - RETURNS FILTERED DATA ON SUCCESS OR FALSE ON FAILURES */
 
-	public static function val_char_only($input_field) {
-		if(!preg_match("/^[a-z0-9 .\-]+$/i",$input_field)) {
-			$result = false;
-		} else { $result = true; }
-		return ($result) ? $input_field : false;
+	public static function val_string($input_field) {
+		$sanitize = filter_var($input_field, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+		return $sanitize;
 	}
 
-	/*VALIDATE EMAIL FIELDS*/
+	/* SANITIZE AND VALIDATE EMAIL - RETURNS FILTERED DATA ON SUCCESS OR FALSE ON FAILURES */
+
+	public static function val_int($input_field) {
+
+			$sanitize = filter_var($input_field, FILTER_SANITIZE_NUMBER_INT);
+
+			if(!$result = filter_var($sanitize, FILTER_VALIDATE_INT) === false) {
+				return $result;
+			} else {
+				return $input_field;
+			}
+
+	}
+
+	/* SANITIZE AND VALIDATE EMAIL - RETURNS FILTERED DATA ON SUCCESS OR FALSE ON FAILURES */
 
 	public static function val_email($input_field) {
-		if(!filter_var($input_field, FILTER_VALIDATE_EMAIL)) {
-			$result = false;
-		} else { $result = true; }
-		return ($result) ? $input_field : false;
+
+			$sanitize = filter_var($input_field, FILTER_SANITIZE_EMAIL);
+
+			if($result = filter_var($sanitize, FILTER_VALIDATE_EMAIL)) {
+				return $result;
+			} else {
+				return false;
+			}
 	}
+
 }
 ?>
