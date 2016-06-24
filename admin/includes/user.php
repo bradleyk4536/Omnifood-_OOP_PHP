@@ -23,7 +23,8 @@
 					if(!$this->email) {return false; } else { break; }
 			case "update":
 					$result = static::update();
-					$this->user_id = $_GET['id'];
+					$this->user_id 	= $_GET['id'];
+
 					break;
 			default: return false;
 			endswitch;
@@ -37,7 +38,6 @@
 				$this->role 		= static::val_string($this->role);
 				$this->password 	= static::val_string($this->password);
 				$this->password 	= password_hash($this->password, PASSWORD_BCRYPT, array('cost => 12'));
-
 				$result->bindParam(':username', $this->username, PDO::PARAM_STR);
 				$result->bindParam(':first_name', $this->first_name, PDO::PARAM_STR);
 				$result->bindParam(':last_name', $this->last_name, PDO::PARAM_STR);

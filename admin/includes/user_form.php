@@ -30,7 +30,7 @@
 		</div>
 		<div class="form-group">
 			<label for="password">Password</label>
-			<input type="password" name="password" required class="form-control" value="<?php echo $user->password; ?>">
+			<input type="password" name="password" required class="form-control">
 		</div>
 		<div class="form-group pull-right">
 		<input type="submit" class="btn btn-success" name="submit" value="Save User">

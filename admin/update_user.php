@@ -16,13 +16,13 @@ if(isset($_POST['submit'])) {
 			$user->email 		= trim($_POST['email']);
 			$user->password 	= trim($_POST['password']);
 			$user->role 		= trim($_POST['role']);
-
-
+/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
 			$result = $user->add_update("update");
-
+/*	TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
 			if($result) {
 				$result->execute();
 				echo $user->message = "User Updated";
+				header("Location : users.php");
 			} else {
 					echo $user->message = "Unable to update user";
 			}
@@ -39,6 +39,7 @@ if(isset($_POST['submit'])) {
 			  <div class="col-lg-12">
 					<h1 class="page-header">Update User</h1>
 				<?php include "includes/user_form.php"; ?>
+				<small>*Note: Password is required for all changes.</small>
 			  </div>
 		 </div>
 		 <!-- /.row -->

@@ -13,10 +13,9 @@ if(isset($_POST['submit'])) {
 			$user->email 		= trim($_POST['email']);
 			$user->password 	= trim($_POST['password']);
 			$user->role 		= trim($_POST['role']);
-
-
+/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
 			$result = $user->add_update("add");
-/* CREATE RECORD ONLY WITH ALL REQUIRED FIELDS VALIDATED */
+/*	TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
 			if($result) {
 				$result->execute();
 				echo $user->message = "New User Added";

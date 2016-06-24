@@ -75,7 +75,7 @@ public static function find_by_id($id) {
 
 			$sanitize = filter_var($input_field, FILTER_SANITIZE_NUMBER_INT);
 
-			if(!$result = filter_var($sanitize, FILTER_VALIDATE_INT) === false) {
+			if(!$result = filter_var($sanitize, FILTER_VALIDATE_INT)) {
 				return $result;
 			} else {
 				return $input_field;
