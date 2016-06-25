@@ -40,11 +40,8 @@ public static function find_by_id($id) {
 		global $database;
 		$get_id = $superGlobal;
 		$result = $database->connection->prepare( static::$delete_sql );
-
 		if ($result) { $execute = $result->execute(['id' => $get_id ]); } else { $execute = false; }
-
 		return $execute;
-
 	}
 
 /* USE FOR INTERNAL DATABASE ONLY */
@@ -96,5 +93,25 @@ public static function find_by_id($id) {
 			}
 	}
 
+	/* USER MESSAGES */
+	public static function successMessage(){
+		$document = <<<SUCCESS
+		"<div class='alert alert-success alert-dismissible' role='alert'>
+	  	<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+	  	<strong> $message </strong>
+		</div>"
+SUCCESS;
+		echo $document;
+	}
+
+	public static function failureMessage(){
+		$document = <<<FAILURE
+		"<div class='alert alert-danger alert-dismissible' role='alert'>
+	  	<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+	  	<strong> $message </strong>
+		</div>"
+FAILURE;
+		echo $document;
+	}
 }
 ?>

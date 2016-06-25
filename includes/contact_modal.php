@@ -1,5 +1,4 @@
 <section id="contact">
-<!--	MODAL FORM NOT DISPLAYED UNTIL BUTTON IS SELECTED-->
 	<div class="modal fade" id="contact_modal">
 	<div class="modal-dialog">
 		<div class="modal-content">

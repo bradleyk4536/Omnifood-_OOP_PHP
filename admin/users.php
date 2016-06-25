@@ -1,4 +1,5 @@
 <?php include "includes/admin_header.php"; ?>
+<?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
 	<?php $users = User::read_all(); ?>
 <?php include "includes/admin_top_navigation.php"; ?>
@@ -13,8 +14,11 @@
 					 <li>
 						  <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
 					 </li>
-					 <li class="active">
-						  <i class="fa fa-file"></i>&emsp;<a href="add_user.php">Add Users</a>
+					 <li>
+						  <i class="fa fa-file"></i>&emsp;<a href="add_user.php">Add User</a>
+					 </li>
+					 <li>
+						  <i class="fa fa-file"></i>&emsp;<a href="../index.php">View Site</a>
 					 </li>
 				</ol>
 			<div class="col-md-12">
@@ -42,8 +46,9 @@
 							<td><?php echo $user->first_name; ?> </td>
 							<td><?php echo $user->last_name; ?> </td>
 							<td><?php echo $user->email; ?> </td>
-							<td><?php echo $user->role; ?> </td>
+							<td><?php echo $user->role; ?></td>
 						</tr>
+
 					<?php endforeach; ?>
 
 				</tbody>
@@ -56,6 +61,7 @@
 		<hr>
 	</div>
 </div>
+
 <!--DYNAMIC DATA BEING PASSED TO DELETE.PHP-->
 <script>
 	$(document).ready(function(){

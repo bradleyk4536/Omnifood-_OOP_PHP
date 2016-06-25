@@ -25,8 +25,11 @@
 		</div>
 		<div class="form-group">
 			<label for="role">Role</label>
-			<input type="text" name="role" class="form-control" value="<?php echo $user->role; ?>">
-
+			<select name="role" id="" class="form-control">
+				<option value="<?php echo $user->role_id ?>"><?php echo $user->role; ?></option>
+				<option value="1">Subscriber</option>
+				<option value="2">Admin</option>
+			</select>
 		</div>
 		<div class="form-group">
 			<label for="password">Password</label>

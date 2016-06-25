@@ -1,5 +1,3 @@
-<!--NOTE ALL BELOW FILES ARE LOCATED IN INCLUDES FOLDER-->
-<!--	HEADER SECTION-->
 <?php include "includes/header.php"; ?>
 <!--	HERO SECTION-->
 <?php include "includes/hero.php"; ?>

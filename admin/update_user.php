@@ -1,8 +1,10 @@
 <?php include "includes/admin_header.php"; ?>
+<?php ob_start(); ?>
+<?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
+<?php include "includes/admin_top_navigation.php"; ?>
 <?php
 	if(empty($_GET['id'])) { redirect_to('users.php'); }
-
 	$user = User::find_by_id($_GET['id']);
 if(isset($_POST['submit'])) {
 	$user = new User();
@@ -21,7 +23,6 @@ if(isset($_POST['submit'])) {
 /*	TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
 			if($result) {
 				$result->execute();
-				echo $user->message = "User Updated";
 				header("Location : users.php");
 			} else {
 					echo $user->message = "Unable to update user";
@@ -37,7 +38,12 @@ if(isset($_POST['submit'])) {
 		 <!-- Page Heading -->
 		 <div class="row">
 			  <div class="col-lg-12">
-					<h1 class="page-header">Update User</h1>
+					<h1 class="page-header">Edit User</h1>
+					<ol class="breadcrumb">
+					 <li>
+						  <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
+					 </li>
+				</ol>
 				<?php include "includes/user_form.php"; ?>
 				<small>*Note: Password is required for all changes.</small>
 			  </div>

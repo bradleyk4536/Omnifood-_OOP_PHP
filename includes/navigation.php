@@ -1,5 +1,4 @@
-<header class="site-header" role="banner">
-<!--	NAVBAR-->
+<header class="site-header" role="banner"><!--	NAVBAR-->
 	<div class="navbar-wraper">
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		  <div class="container-fluid">
@@ -12,18 +11,17 @@
 				  <span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#"><i class="ion-android-restaurant"></i> Omnifoods</a>
-			 </div>
-			 <!-- Collect the nav links, forms, and other content for toggling -->
+			 </div><!-- Collect the nav links, forms, and other content for toggling -->
 			 <div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
-				  <li class="active"><a href="#">Home</a></li>
-				  <li><a href="resources.html">Resources</a></li>
-				  <li><a href="blog.html">Blog</a></li>
-				  <li><a href="contact.html" data-toggle="modal" data-target="#contact_modal">Contact</a></li>
+				  <li class="active"><a href="index.php">Home</a></li>
+				  <li><a href="menu.php">Menu</a></li>
+				  <li><a href="#" data-toggle="modal" data-target="#contact_modal">Contact</a></li>
+				  <li><a href="#" data-toggle="modal" data-target="#login_modal">Login</a></li>
 				</ul>
 			 </div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
 	</div>
 </header>
-<?php include "includes/contact_modal.php"; ?>
+<?php include "admin/includes/login_modal.php"; ?>

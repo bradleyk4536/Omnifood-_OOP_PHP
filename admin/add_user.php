@@ -1,4 +1,5 @@
 <?php include "includes/admin_header.php"; ?>
+<?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
 <?php include "includes/admin_top_navigation.php"; ?>
 <?php
@@ -32,9 +33,15 @@ if(isset($_POST['submit'])) {
 		 <!-- Page Heading -->
 		 <div class="row">
 			  <div class="col-lg-12">
-					<h1 class="page-header">
-						 Add User
-					</h1>
+					<h1 class="page-header">Add User</h1>
+					<ol class="breadcrumb">
+					 <li>
+						  <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
+					 </li>
+					 <li>
+						  <i class="fa fa-file"></i>&emsp;<a href="add_user.php">Add User</a>
+					 </li>
+				</ol>
 					<?php include "includes/user_form.php"; ?>
 			  </div>
 		 </div>

@@ -1,4 +1,5 @@
 <?php include "includes/admin_header.php"; ?>
+<?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
  <div id="wrapper">
 	<?php include "includes/admin_top_navigation.php"; ?>
 
