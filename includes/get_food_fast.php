@@ -3,7 +3,7 @@
 		<div class="section_header">
 			<i class="ion-android-restaurant section_icon"></i>
 			<h2>Get Food Fast &mdash; Not Fast Food</h2>
-			<p class="section_intro_text">Hello, were Omnifood, your new premium food delivery serice. We know you&#39;re alway&#39;s busy. No time for cooking. So let us take care of that for you. We are really good at it, we promise you.</p>
+			<p class="section_intro_text">Hello, were Omnifood, your new premium food delivery service. We know you&#39;re alway&#39;s busy. No time for cooking. So let us take care of that for you. We are really good at it, we promise you.</p>
 		</div>
 		<div class="row">
 			<div class="col-sm-3">

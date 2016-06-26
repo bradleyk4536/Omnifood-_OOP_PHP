@@ -3,7 +3,9 @@
 <div id="wrapper">
 <?php include "includes/admin_top_navigation.php"; ?>
 <?php
+$role = User::get_user_role();
 $user = new User();
+
 if(isset($_POST['submit'])) {
 	if($user) {
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/

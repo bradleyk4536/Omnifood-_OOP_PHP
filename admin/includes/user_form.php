@@ -1,3 +1,4 @@
+
 <form action="" method="post" enctype="multipart/form-data">
 	<div class="col-md-6 col-md-offset-3">
 		<div class="form-group">
@@ -26,9 +27,17 @@
 		<div class="form-group">
 			<label for="role">Role</label>
 			<select name="role" id="" class="form-control">
-				<option value="<?php echo $user->role_id ?>"><?php echo $user->role; ?></option>
-				<option value="1">Subscriber</option>
-				<option value="2">Admin</option>
+<!-- GET THE ROLE FROM USERS TABLE -->
+				<option value="<?php echo $user->role ?>"><?php echo $user->role; ?></option>
+<!--    POPULATE ROLE DROP DOWN FROM ROLE TABLE				-->
+				<?php $role = User::get_user_role(); ?>
+				<?php foreach($role as $role) : ?>
+				<?php if($user->role != $role->role) : ?>
+				<option value="<?php echo $role->role ?>"><?php echo $role->role; ?></option>
+				<?php endif; ?>
+				<?php endforeach; ?>
+
+
 			</select>
 		</div>
 		<div class="form-group">

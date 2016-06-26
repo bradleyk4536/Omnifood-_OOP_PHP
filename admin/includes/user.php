@@ -1,24 +1,23 @@
 
 <?php
 	class User extends Db_Crud {
-		protected static $find_all_sql = "SELECT users.user_id, users.role_id, users.username, users.first_name, users.last_name, users.email, users.password, role.role_id, role.role FROM users LEFT JOIN role ON users.role_id = role.role_id ORDER BY users.user_id DESC ";
+		protected static $find_all_sql = "SELECT users.user_id, users.role, users.username, users.first_name, users.last_name, users.email, users.password, role.role_id, role.role FROM users LEFT JOIN role ON users.role = role.role ORDER BY users.user_id DESC ";
 
 		protected static $create_sql = "INSERT INTO users(username, first_name, last_name, email, password, role) VALUES (:username, :first_name, :last_name, :email, :password, :role) ";
 
+		protected static $find_by_id_sql = "SELECT users.user_id, users.role, users.username, users.first_name, users.last_name, users.email, users.password, role.role_id, role.role FROM users LEFT JOIN role ON users.role = role.role WHERE user_id = :user_id ";
 
-
-		protected static $find_by_id_sql = "SELECT users.user_id, users.role_id, users.username, users.first_name, users.last_name, users.email, users.password, role.role_id, role.role FROM users LEFT JOIN role ON users.role_id = role.role_id WHERE user_id = :user_id ";
-
-		protected static $update_sql = "UPDATE users SET username=:username, first_name=:first_name, last_name=:last_name, email=:email, role_id=:role, password=:password WHERE user_id = :id ";
+		protected static $update_sql = "UPDATE users SET username=:username, first_name=:first_name, last_name=:last_name, email=:email, role=:role, password=:password WHERE user_id = :id ";
 		protected static $delete_sql = "DELETE FROM users WHERE user_id = :id ";
 		protected static $login_sql = "SELECT * FROM users WHERE username = :username LIMIT 1";
+
 		public $user_id;
 		public $username;
 		public $first_name;
 		public $last_name;
 		public $email;
 		public $password;
-		public $role_id;
+		public $role;
 		public $message;
 
 		public function add_update($control) {
@@ -72,6 +71,14 @@
 
 			return $verify_password ? $get_login_info : false;
 
+		}
+
+		public static function get_user_role() {
+			global $database;
+
+			$result 		= $database->query_db("SELECT * FROM role ");
+			$obj_result = $result->fetchAll(PDO::FETCH_OBJ);
+			return $obj_result;
 		}
 
 	}
