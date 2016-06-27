@@ -1,4 +1,3 @@
-
 <form action="" method="post" enctype="multipart/form-data">
 	<div class="col-md-6 col-md-offset-3">
 		<div class="form-group">

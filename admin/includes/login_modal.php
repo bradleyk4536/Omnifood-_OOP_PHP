@@ -11,6 +11,8 @@
 
 				$session->set_login_sessions($verify);
 				header("Location: admin/index.php");
+			} else {
+				$session->message = "<i class='ion-lock-combination'></i> STOP &mdash; YOU ARE NOT AUTHORIZED TO LOGIN TO THIS SITE";
 			}
 		}
 	}
@@ -33,7 +35,7 @@
 					</div>
 					<div class="form-group">
 						<div class="col-sm-6 col-sm-offset-3">
-							<input type="text" name="password" class="form-control" id="subscribe-email" placeholder="Password...">
+							<input type="password" name="password" class="form-control" id="subscribe-email" placeholder="Password...">
 						</div>
 					</div>
 					<hr>
@@ -42,7 +44,6 @@
 							<input type="submit" name="submit" class="form-control btn btn-danger" value="Login">
 						</div>
 					</div>
-
 				</form>
 			</div>
 		</div>

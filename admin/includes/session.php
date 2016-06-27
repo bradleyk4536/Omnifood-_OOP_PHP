@@ -2,9 +2,10 @@
 	class Session {
 		private $signed_in = false;
 		public $user_id;
-		public $message;
+		public $message = "";
 		public $role;
 		public $username;
+
 
 		function __construct() {
 			session_start();
@@ -26,6 +27,7 @@
 				$this->user_id 	= $_SESSION['user_id'] = $user->user_id;
 				$this->role 		= $_SESSION['role'] = $user->role;
 				$this->username 	= $_SESSION['username'] = $user->username;
+
 				$this->signed_in = true;
 			}
 

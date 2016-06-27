@@ -1,6 +1,13 @@
 <!--DISPLAYED ON LANDING PAGE-->
 <section id="newsletter">
 	<div class="container">
+	<?php if($session->message) : ?>
+			<div class="col-sm-12">
+				<div class="row">
+					<?php User::notifyMessage($session->message, "failure"); ?>
+				</div>
+			</div>
+	<?php endif; ?>
 		<div class="row text-center">
 			<div class="col-sm-6">
 				<p class="lead"><strong>Subscribe to our great newsletter</strong></p>

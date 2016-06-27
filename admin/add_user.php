@@ -17,16 +17,15 @@ if(isset($_POST['submit'])) {
 			$user->password 	= trim($_POST['password']);
 			$user->role 		= trim($_POST['role']);
 /* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
-			$result = $user->add_update("add");
+			$user->add_up_result = $user->add_update("add");
 /*	TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
-			if($result) {
-				$result->execute();
-				echo $user->message = "New User Added";
+			if($user->add_up_result) {
+				$user->add_up_result->execute();
+				$session->message = "<i class='ion-person-add'></i> SUCCESS &mdash; NEW USER ADDED";
 			} else {
-					echo $user->message = "Unable to add new user";
+					$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD NEW USER";
 			}
-		} else {
-		echo $user->message = "All fields are required to be filled in"; }
+		}
 	}
 }
 ?>
@@ -41,9 +40,19 @@ if(isset($_POST['submit'])) {
 						  <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
 					 </li>
 					 <li>
-						  <i class="fa fa-file"></i>&emsp;<a href="add_user.php">Add User</a>
+						  <i class="ion-person-add"></i>&emsp;<a href="add_user.php">Add Another User</a>
 					 </li>
 				</ol>
+				<?php if($user->add_up_result && isset($session->message)) : ?>
+				<div class="col-sm-12">
+					<?php User::notifyMessage($session->message, "success"); ?>
+				</div>
+				<?php endif; ?>
+				<?php if($user->add_up_result === false && isset($session->message)) : ?>
+				<div class="col-sm-12">
+					<?php User::notifyMessage($session->message, "failure"); ?>
+				</div>
+				<?php endif; ?>
 					<?php include "includes/user_form.php"; ?>
 			  </div>
 		 </div>

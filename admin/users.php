@@ -10,17 +10,14 @@
  <div class="row">
 	  <div class="col-lg-12">
 			<h1 class="page-header">Omnifood</h1>
-				<ol class="breadcrumb">
-					 <li>
-						  <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
-					 </li>
-					 <li>
-						  <i class="fa fa-file"></i>&emsp;<a href="add_user.php">Add User</a>
-					 </li>
-					 <li>
-						  <i class="fa fa-file"></i>&emsp;<a href="../index.php">View Site</a>
-					 </li>
-				</ol>
+			<ol class="breadcrumb">
+				 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a></li>
+				 <?php if($_SESSION['role'] === "Admin") : ?>
+				 <li><i class="ion-person-add"></i> <a href="add_user.php">Add User</a></li>
+				 <li><i class="ion-person-add"></i> <a href="add_user.php">User Role Manager</a></li>
+				 <?php endif; ?>
+				 <li><i class="ion-android-restaurant"></i> <a href="../index.php"> View Site</a></li>
+			</ol>
 			<div class="col-md-12">
 			<table class="table table-hover">
 				<thead>

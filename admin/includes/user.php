@@ -18,7 +18,8 @@
 		public $email;
 		public $password;
 		public $role;
-		public $message;
+		public $message = "";
+		public $add_up_result;
 
 		public function add_update($control) {
 			global $database;
@@ -66,11 +67,11 @@
 			$sql->bindParam(':username', $username);
 			$sql->execute();
 			$get_login_info = $sql->fetch(PDO::FETCH_OBJ);
-			$verify_password = password_verify($password, $get_login_info->password);
 
-
-			return $verify_password ? $get_login_info : false;
-
+			if($get_login_info) {
+				$verify_password = password_verify($password, $get_login_info->password);
+				return $verify_password ? $get_login_info : false;
+			} else { return false; }
 		}
 
 		public static function get_user_role() {

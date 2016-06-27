@@ -11,11 +11,9 @@
 						<h1 class="page-header">Omnifood</h1>
 						<ol class="breadcrumb">
 							 <li>
-								  <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+								  <i class="fa fa-dashboard"></i><a href="index.php"> Dashboard</a>
 							 </li>
-							 <li class="active">
-								  <i class="fa fa-file"></i> Blank Page
-							 </li>
+							 <li class="active"><i class="ion-android-restaurant"></i><a href="../index.php"> View site</a></li>
 						</ol>
 				  </div>
 			 </div><!-- /.row -->

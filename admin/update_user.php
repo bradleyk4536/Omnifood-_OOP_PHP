@@ -6,33 +6,7 @@
 <?php
 	if(empty($_GET['id'])) { redirect_to('users.php'); }
 	$user = User::find_by_id($_GET['id']);
-if(isset($_POST['submit'])) {
-	$user = new User();
-
-	if($user) {
-			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
-		if(!empty($_POST['username']) && !empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['role'])) {
- 			$user->username 	= trim($_POST['username']);
-			$user->first_name = trim($_POST['first_name']);
-			$user->last_name 	= trim($_POST['last_name']);
-			$user->email 		= trim($_POST['email']);
-			$user->password 	= trim($_POST['password']);
-			$user->role 		= trim($_POST['role']);
-/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
-			$result = $user->add_update("update");
-/*	TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
-			if($result) {
-				$result->execute();
-				header("Location : users.php");
-			} else {
-					echo $user->message = "Unable to update user";
-			}
-	} else {
-		echo $user->message = "All fields are required to be filled in"; }
-	}
-}
 ?>
-<?php include "includes/admin_top_navigation.php"; ?>
 <div id="page-wrapper">
 	<div class="container-fluid">
 		 <!-- Page Heading -->
@@ -44,7 +18,34 @@ if(isset($_POST['submit'])) {
 						  <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
 					 </li>
 				</ol>
-				<?php include "includes/user_form.php"; ?>
+<?php
+if(isset($_POST['submit'])) {
+	$user = new User;
+	if($user) {
+			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
+		if(!empty($_POST['username']) && !empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['role'])) {
+			$user->username 	= trim($_POST['username']);
+			$user->first_name = trim($_POST['first_name']);
+			$user->last_name 	= trim($_POST['last_name']);
+			$user->email 		= trim($_POST['email']);
+			$user->password 	= trim($_POST['password']);
+			$user->role 		= trim($_POST['role']);
+/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
+			$user->add_up_result = $user->add_update("update");
+/*	TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
+			if($user->add_up_result) {
+				$user->add_up_result->execute();
+				$session->message = "<i class='ion-person-add'></i> SUCCESS &mdash; USER UPDATED";
+				User::notifyMessage($session->message, "success");
+			} else {
+					$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE USER";
+					User::notifyMessage($seesion->message, "failure");
+		}
+		}
+	}
+}
+?>
+<?php include "includes/user_form.php"; ?>
 				<small>*Note: Password is required for all changes.</small>
 			  </div>
 		 </div>

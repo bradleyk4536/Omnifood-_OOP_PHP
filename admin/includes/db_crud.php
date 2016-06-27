@@ -94,24 +94,30 @@ public static function find_by_id($id) {
 	}
 
 	/* USER MESSAGES */
-	public static function successMessage(){
+	public static function notifyMessage($message, $type){
+
+	switch ($type):
+		case "success":
 		$document = <<<SUCCESS
-		"<div class='alert alert-success alert-dismissible' role='alert'>
+		<div class='alert alert-success alert-dismissible text-center' role='alert'>
 	  	<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
 	  	<strong> $message </strong>
-		</div>"
+		</div>
 SUCCESS;
+		break;
+
+		case "failure":
+		$document = <<<FAILURE
+		<div class='alert alert-danger alert-dismissible text-center' role='alert'>
+	  	<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+	  	<strong> $message </strong>
+		</div>
+FAILURE;
+		break;
+		endswitch;
+
 		echo $document;
 	}
 
-	public static function failureMessage(){
-		$document = <<<FAILURE
-		"<div class='alert alert-danger alert-dismissible' role='alert'>
-	  	<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-	  	<strong> $message </strong>
-		</div>"
-FAILURE;
-		echo $document;
-	}
 }
 ?>
