@@ -2,7 +2,7 @@
 	class Session {
 		private $signed_in = false;
 		public $user_id;
-		public $message = "";
+		public $message;
 		public $role;
 		public $username;
 

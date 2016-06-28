@@ -3,7 +3,7 @@
 <div id="wrapper">
 <?php include "includes/admin_top_navigation.php"; ?>
 <?php
-$role = User::get_user_role();
+$role = Role::get_user_role();
 $user = new User();
 
 if(isset($_POST['submit'])) {
@@ -44,12 +44,12 @@ if(isset($_POST['submit'])) {
 					 </li>
 				</ol>
 				<?php if($user->add_up_result && isset($session->message)) : ?>
-				<div class="col-sm-12">
+				<div class="col-sm-6 col-sm-offset-3">
 					<?php User::notifyMessage($session->message, "success"); ?>
 				</div>
 				<?php endif; ?>
 				<?php if($user->add_up_result === false && isset($session->message)) : ?>
-				<div class="col-sm-12">
+				<div class="col-sm-6 col-sm-offset-3">
 					<?php User::notifyMessage($session->message, "failure"); ?>
 				</div>
 				<?php endif; ?>

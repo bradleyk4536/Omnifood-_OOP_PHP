@@ -4,11 +4,8 @@
 		if(!empty($_POST['username']) && !empty($_POST['password']) ) {
 			$username = trim($_POST['username']);
 			$password = trim($_POST['password']);
-
 			$verify = User::check_user($username, $password);
-
 			if($verify) {
-
 				$session->set_login_sessions($verify);
 				header("Location: admin/index.php");
 			} else {

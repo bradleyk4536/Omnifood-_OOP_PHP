@@ -72,11 +72,11 @@ public static function find_by_id($id) {
 
 			$sanitize = filter_var($input_field, FILTER_SANITIZE_NUMBER_INT);
 
-			if(!$result = filter_var($sanitize, FILTER_VALIDATE_INT)) {
+			if(!$result = filter_var($sanitize, FILTER_VALIDATE_INT)) :
 				return $result;
-			} else {
+			else :
 				return $input_field;
-			}
+			endif;
 
 	}
 
@@ -86,11 +86,11 @@ public static function find_by_id($id) {
 
 			$sanitize = filter_var($input_field, FILTER_SANITIZE_EMAIL);
 
-			if($result = filter_var($sanitize, FILTER_VALIDATE_EMAIL)) {
+			if($result = filter_var($sanitize, FILTER_VALIDATE_EMAIL)) :
 				return $result;
-			} else {
+			else :
 				return false;
-			}
+			endif;
 	}
 
 	/* USER MESSAGES */

@@ -9,12 +9,12 @@
 		 <!-- Page Heading -->
  <div class="row">
 	  <div class="col-lg-12">
-			<h1 class="page-header">Omnifood</h1>
+			<h1 class="page-header">Omnifoods &mdash; <small>User Manager</small></h1>
 			<ol class="breadcrumb">
 				 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a></li>
 				 <?php if($_SESSION['role'] === "Admin") : ?>
 				 <li><i class="ion-person-add"></i> <a href="add_user.php">Add User</a></li>
-				 <li><i class="ion-person-add"></i> <a href="add_user.php">User Role Manager</a></li>
+				 <li><i class="ion-person"></i> <a href="role_manager.php">User Role Manager</a></li>
 				 <?php endif; ?>
 				 <li><i class="ion-android-restaurant"></i> <a href="../index.php"> View Site</a></li>
 			</ol>
@@ -37,7 +37,9 @@
 							<td><?php echo $user->username; ?>
 							<div class="action_link">
 								<a href="update_user.php?id=<?php echo $user->user_id ?>">Edit</a>
+								<?php if($_SESSION['role'] === "Admin") : ?>
 								<a rel='<?php echo $user->user_id ?>' href='javascript:void(0)' class='delete_link'>Delete</a>
+								<?php endif; ?>
 							</div>
 							</td>
 							<td><?php echo $user->first_name; ?> </td>

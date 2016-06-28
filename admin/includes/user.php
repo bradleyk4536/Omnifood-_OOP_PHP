@@ -73,14 +73,5 @@
 				return $verify_password ? $get_login_info : false;
 			} else { return false; }
 		}
-
-		public static function get_user_role() {
-			global $database;
-
-			$result 		= $database->query_db("SELECT * FROM role ");
-			$obj_result = $result->fetchAll(PDO::FETCH_OBJ);
-			return $obj_result;
-		}
-
-	}
+}
 ?>

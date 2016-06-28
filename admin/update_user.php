@@ -1,5 +1,4 @@
 <?php include "includes/admin_header.php"; ?>
-<?php ob_start(); ?>
 <?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
 <?php include "includes/admin_top_navigation.php"; ?>
@@ -14,9 +13,7 @@
 			  <div class="col-lg-12">
 					<h1 class="page-header">Edit User</h1>
 					<ol class="breadcrumb">
-					 <li>
-						  <i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a>
-					 </li>
+					 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a></li>
 				</ol>
 <?php
 if(isset($_POST['submit'])) {
@@ -32,15 +29,22 @@ if(isset($_POST['submit'])) {
 			$user->role 		= trim($_POST['role']);
 /* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
 			$user->add_up_result = $user->add_update("update");
-/*	TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
-			if($user->add_up_result) {
+
+/*TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
+			if($user->add_up_result) :
+
 				$user->add_up_result->execute();
 				$session->message = "<i class='ion-person-add'></i> SUCCESS &mdash; USER UPDATED";
+				echo "<div class='col-sm-6 col-sm-offset-3'>";
 				User::notifyMessage($session->message, "success");
-			} else {
-					$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE USER";
-					User::notifyMessage($seesion->message, "failure");
-		}
+				echo "</div>";
+
+			else :
+				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE USER";
+				echo "<div class='col-sm-6 col-sm-offset-3'>";
+				User::notifyMessage($seesion->message, "failure");
+				echo "</div>";
+			endif;
 		}
 	}
 }

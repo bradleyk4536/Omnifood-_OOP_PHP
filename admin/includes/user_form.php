@@ -21,24 +21,32 @@
 		<div class="form-group">
 			<label for="email">Email</label>
 			<input type="email" name="email" class="form-control" required value="<?php echo $user->email; ?>">
-
 		</div>
+		<?php if($_SESSION['role'] === "Subscriber") : ?>
+		<div class="form-group">
+			<label for="role">Role</label>
+			<select name="role" id="" class="form-control">
+<!-- GET THE ROLE FROM USERS TABLE -->
+				<option value="<?php echo $user->role ?>"><?php echo $user->role; ?></option>
+			</select>
+		</div>
+		<?php endif; ?>
+		<?php if($_SESSION['role'] === "Admin") : ?>
 		<div class="form-group">
 			<label for="role">Role</label>
 			<select name="role" id="" class="form-control">
 <!-- GET THE ROLE FROM USERS TABLE -->
 				<option value="<?php echo $user->role ?>"><?php echo $user->role; ?></option>
 <!--    POPULATE ROLE DROP DOWN FROM ROLE TABLE				-->
-				<?php $role = User::get_user_role(); ?>
+				<?php $role = Role::get_user_role(); ?>
 				<?php foreach($role as $role) : ?>
 				<?php if($user->role != $role->role) : ?>
 				<option value="<?php echo $role->role ?>"><?php echo $role->role; ?></option>
 				<?php endif; ?>
 				<?php endforeach; ?>
-
-
 			</select>
 		</div>
+		<?php endif; ?>
 		<div class="form-group">
 			<label for="password">Password</label>
 			<input type="password" name="password" required class="form-control">
