@@ -1,8 +1,8 @@
 <?php
-	class Upload extends Db_Crud {
+	class Media extends Db_Crud {
 		protected static $delete_sql = "DELETE FROM media WHERE image_id = :id ";
-		protected static $create_sql = "INSERT INTO media(title, caption, description, filename, alternate_text, type, size) VALUES (:title, :caption, :description, :filename, :alternate_text, :type, :size)";
-		protected static $update_sql = "UPDATE media SET title=:title, caption=:caption, description=:description, filename=:filename, alternate_text=:alternate_text, type=:type, size=:size";
+		protected static $create_sql = "INSERT INTO media(title, caption, description, alternate_text) VALUES (:title, :caption, :description, :alternate_text)";
+		protected static $update_sql = "UPDATE media SET title=:title, caption=:caption, description=:description, alternate_text=:alternate_text";
 		public $image_id;
 		public $title;
 		public $caption;
@@ -11,6 +11,7 @@
 		public $alternate_text;
 		public $type;
 		public $size;
+		public $add_up_result;
 
 /*IMAGE FILE PROPERTIES*/
 		public $tmp_path;
@@ -126,14 +127,12 @@
 			$result->bindParam(':title', $this->title, PDO::PARAM_STR);
 			$result->bindParam(':caption', $this->caption, PDO::PARAM_STR);
 			$result->bindParam(':description', $this->description, PDO::PARAM_STR);
-			$result->bindParam(':filename', $this->filename, PDO::PARAM_STR);
+//			$result->bindParam(':filename', $this->filename, PDO::PARAM_STR);
 			$result->bindParam('alternate_text', $this->alternate_text, PDO::PARAM_STR);
-			$result->bindParam(':type', $this->type, PDO::PARAM_STR);
-			$result->bindParam(':size', $this->size, PDO::PARAM_INT);
+//			$result->bindParam(':type', $this->type, PDO::PARAM_STR);
+//			$result->bindParam(':size', $this->size, PDO::PARAM_INT);
 
-			$result->execute();
-
-			return $result;
+			return false;
 
 		}
 	}

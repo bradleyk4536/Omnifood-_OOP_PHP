@@ -10,18 +10,16 @@
 				  <div class="col-lg-12">
 						<h1 class="page-header">Omnifood</h1>
 						<ol class="breadcrumb">
-							 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Site Manager</a></li>
-								 <?php if($_SESSION['role'] === "Admin") : ?>
-								 <li><i class="ion-person-add"></i> <a href="users.php">User Manager</a></li>
-								 <li><i class="ion-person"></i> <a href="role_manager.php">Media Manager</a></li>
-								 <?php endif; ?>
-								 <li><i class="ion-android-restaurant"></i> <a href="../index.php"> View Site</a></li>
+							 <li>
+								  <i class="fa fa-dashboard"></i><a href="index.php"> Main Page</a>
+							 </li>
+							 <li class="active"><i class="ion-android-restaurant"></i><a href="../index.php"> View site</a></li>
 						</ol>
 				  </div>
 			 </div><!-- /.row -->
 		</div><!-- /.container-fluid -->
 		<hr>
-		Hello
+		<?php include "includes/admin_dashboard.php"; ?>
   </div><!-- /#page-wrapper -->
 </div>
     <!-- /#wrapper -->

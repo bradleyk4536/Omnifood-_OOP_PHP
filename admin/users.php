@@ -11,7 +11,7 @@
 	  <div class="col-lg-12">
 			<h1 class="page-header">Omnifoods &mdash; <small>User Manager</small></h1>
 			<ol class="breadcrumb">
-				 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a></li>
+				 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Main Page</a></li>
 				 <?php if($_SESSION['role'] === "Admin") : ?>
 				 <li><i class="ion-person-add"></i> <a href="add_user.php">Add User</a></li>
 				 <li><i class="ion-person"></i> <a href="role_manager.php">User Role Manager</a></li>
@@ -73,4 +73,5 @@
 	});
 </script>
 <?php include "includes/admin_footer.php"; ?>
+
 <!--	target delete model and delete record					-->

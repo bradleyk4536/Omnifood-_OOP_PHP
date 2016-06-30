@@ -13,7 +13,7 @@
 			  <div class="col-lg-12">
 					<h1 class="page-header">Edit User</h1>
 					<ol class="breadcrumb">
-					 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a></li>
+					 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Main Page</a></li>
 				</ol>
 <?php
 if(isset($_POST['submit'])) {

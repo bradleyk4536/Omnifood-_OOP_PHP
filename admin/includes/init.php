@@ -9,7 +9,7 @@
 	require_once(INCLUDES_PATH.DS."db_object.php");
 	require_once(INCLUDES_PATH.DS."user.php");
 	require_once(INCLUDES_PATH.DS."role.php");
-	require_once(INCLUDES_PATH.DS."image_upload.php");
+	require_once(INCLUDES_PATH.DS."media_upload.php");
 //	require_once(INCLUDES_PATH.DS."comment.php");
 	require_once(INCLUDES_PATH.DS."session.php");
 //	require_once(INCLUDES_PATH.DS."paginate.php");
