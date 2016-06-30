@@ -5,8 +5,9 @@
 			<input type="text" name="title" class="form-control" value="<?php echo $media->title; ?>">
 		</div>
 		<div class="form-group">
-		<a class="thumbnail" href="">
-			<img src="" alt="">
+		<a class="thumbnail" href="#">
+			<img src="<?php echo $media->picture_path(); ?>" alt="">
+			<input type="file" name="media">
 		</a>
 		</div>
 		<div class="form-group">

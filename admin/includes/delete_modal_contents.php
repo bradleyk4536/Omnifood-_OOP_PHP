@@ -1,14 +1,3 @@
-<?php
-if(isset($_GET['delete'])) {
-
-	if($session->is_signed_in() && $_SESSION['role'] === 'Admin') {
-
-		$deleteUser = User::deleteRecord($_GET['delete']);
-
-		if($deleteUser) { header("Location: users.php"); }
-	}
-}
-?>
 <!-- Modal -->
 <div id="deleteModal" class="modal fade" role="dialog">
   <div class="modal-dialog">

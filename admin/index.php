@@ -13,7 +13,7 @@
 							 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Site Manager</a></li>
 								 <?php if($_SESSION['role'] === "Admin") : ?>
 								 <li><i class="ion-person-add"></i> <a href="users.php">User Manager</a></li>
-								 <li><i class="ion-person"></i> <a href="role_manager.php">Media Manager</a></li>
+								 <li><i class="ion-ios-camera"></i> <a href="medias.php">Media Manager</a></li>
 								 <?php endif; ?>
 								 <li><i class="ion-android-restaurant"></i> <a href="../index.php"> View Site</a></li>
 						</ol>

@@ -1,7 +1,8 @@
 <?php
 	class Media extends Db_Crud {
+		protected static $find_all_sql = "SELECT * FROM media ";
 		protected static $delete_sql = "DELETE FROM media WHERE image_id = :id ";
-		protected static $create_sql = "INSERT INTO media(title, caption, description, alternate_text) VALUES (:title, :caption, :description, :alternate_text)";
+		protected static $create_sql = "INSERT INTO media(title, caption, description, filename, alternate_text, type, size) VALUES (:title, :caption, :description, :filename, :alternate_text, :type, :size)";
 		protected static $update_sql = "UPDATE media SET title=:title, caption=:caption, description=:description, alternate_text=:alternate_text";
 		public $image_id;
 		public $title;
@@ -15,11 +16,11 @@
 
 /*IMAGE FILE PROPERTIES*/
 		public $tmp_path;
-		public $upload_directory = "images";
+		public $upload_directory = "media";
 		public $errors = array();
 /*FROM PHP.NET ERROR MESSAGE EXPLAINED*/
 		public $upload_errors_array = array(
-			UPLOAD_ERR_OK 				=> "THERE IS NO ERROR",
+			UPLOAD_ERR_OK 				=> "FILE UPLOADED TO TEMP LOCATION",
 			UPLOAD_ERR_INI_SIZE 		=> "THE UPLOADED FILE EXCEEDS THE UPLOAD_MAX_FILESIZE DIRECTIVE",
 			UPLOAD_ERR_FORM_SIZE 	=> "THE UPLOADED FILE EXCEEDS THE MAX_FILE_SIZE DIRECTIVE",
 			UPLOAD_ERR_PARTIAL 		=> "THE UPLOADED FILE WAS ONLY PARTIAL UPLOADED",
@@ -50,9 +51,11 @@
 			endif;
 		}
 
-/*IMAGE STORAGE DIRECTORY */
 
-		public function picture_path(){ return $this->upload_directory.DS.$this->filename; }
+//		dynamic image dirctory
+		public function picture_path() {
+			return $this->upload_directory.DS.$this->filename;
+		}
 
 /* SAVE IMAGE TO DIRECTORY */
 
@@ -60,7 +63,7 @@
 
 			/* CHECK TO SEE IF IMAGE ALREADY EXISTS */
 
-			if($this->id) :
+			if($this->image_id) :
 				$this->add_update("update");
 			else :
 				if(!empty($this->errors)) :
@@ -83,7 +86,7 @@
 
 				 /* MOVE THE IMAGE FILE FROM SUPERGLOBAL TEMP TO TARGET PATH */
 
-				if(move_uploaded_file($this->tmp-path)) :
+				if(move_uploaded_file($this->tmp_path, $target_path)) :
 					if($this->add_update("add")) :
 						unset($this->tmp_path);
 						return true;
@@ -98,7 +101,7 @@
 
 		public static function delete_image($superGlobal){
 
-			if($result= static::deleteRecord($superGlobal)) :
+			if(static::deleteRecord($superGlobal)) :
 				$target_path = SITE_ROOT.DS. 'admin' . DS . $this->picture_path();
 				return unlink($target_path) ? true : false;
 			else :
@@ -127,12 +130,12 @@
 			$result->bindParam(':title', $this->title, PDO::PARAM_STR);
 			$result->bindParam(':caption', $this->caption, PDO::PARAM_STR);
 			$result->bindParam(':description', $this->description, PDO::PARAM_STR);
-//			$result->bindParam(':filename', $this->filename, PDO::PARAM_STR);
+			$result->bindParam(':filename', $this->filename, PDO::PARAM_STR);
 			$result->bindParam('alternate_text', $this->alternate_text, PDO::PARAM_STR);
-//			$result->bindParam(':type', $this->type, PDO::PARAM_STR);
-//			$result->bindParam(':size', $this->size, PDO::PARAM_INT);
+			$result->bindParam(':type', $this->type, PDO::PARAM_STR);
+			$result->bindParam(':size', $this->size, PDO::PARAM_INT);
 
-			return false;
+			return $result;
 
 		}
 	}

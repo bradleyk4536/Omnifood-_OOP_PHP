@@ -35,7 +35,7 @@ if(isset($_POST['submit'])) {
 		 <div class="row">
 			  <div class="col-lg-12">
 					<h1 class="page-header">Add User</h1>
-					<ol class="breadcrumb">
+				<ol class="breadcrumb">
 					 <li>
 						  <i class="fa fa-dashboard"></i>  <a href="index.php">Main Page</a>
 					 </li>
