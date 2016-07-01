@@ -8,10 +8,8 @@ $media = new Media();
 if(isset($_POST['submit'])) {
 	if($media) {
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
-		if(!empty($_POST['title']) && !empty($_POST['caption']) && !empty($_POST['description']) && !empty($_POST['alternate_text'])) {
- 			$media->title 				= trim($_POST['title']);
+		if(!empty($_POST['caption']) && !empty($_POST['alternate_text'])) {
 			$media->caption 			= trim($_POST['caption']);
-			$media->description 		= trim($_POST['description']);
 			$media->alternate_text 	= trim($_POST['alternate_text']);
 
 			$media->set_file($_FILES['media']);
@@ -19,7 +17,6 @@ if(isset($_POST['submit'])) {
 
 /* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
 			$media->add_up_result = $media->add_update("add");
-			echo print_r($media->add_up_result);
 /*	TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
 			if($media->add_up_result) {
 				$media->add_up_result->execute();
@@ -38,10 +35,10 @@ if(isset($_POST['submit'])) {
 		 <!-- Page Heading -->
 	 <div class="row">
 		  <div class="col-lg-12">
-				<h1 class="page-header">Omnifoods &mdash; <small>Media</small> </h1>
+				<h1 class="page-header">Omnifoods &mdash; <small>Add Media</small> </h1>
 				<ol class="breadcrumb">
-				 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Main Page</a></li>
-				 <li><i class="ion-person-add"></i>&emsp;<a href="add_user.php">Add Another Image</a></li>
+				 <li><i class="fa fa-dashboard"></i>  <a href="medias.php">Media Manager</a></li>
+				 <li><i class="ion-ios-camera"></i>&emsp;<a href="add_media.php">Add Another Image</a></li>
 				</ol>
 					<?php if($media->add_up_result && isset($session->message)) : ?>
 							<div class="col-sm-6 col-sm-offset-3">

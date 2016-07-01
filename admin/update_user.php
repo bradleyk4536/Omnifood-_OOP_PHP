@@ -3,7 +3,9 @@
 <div id="wrapper">
 <?php include "includes/admin_top_navigation.php"; ?>
 <?php
-	if(empty($_GET['id'])) { redirect_to('users.php'); }
+	if(empty($_GET['id'])) :
+		redirect_to('users.php');
+	endif;
 	$user = User::find_by_id($_GET['id']);
 ?>
 <div id="page-wrapper">
@@ -13,14 +15,14 @@
 			  <div class="col-lg-12">
 					<h1 class="page-header">Edit User</h1>
 					<ol class="breadcrumb">
-					 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Main Page</a></li>
+					 <li><i class="fa fa-dashboard"></i>  <a href="users.php">User Manager</a></li>
 				</ol>
 <?php
-if(isset($_POST['submit'])) {
+if(isset($_POST['submit'])) :
 	$user = new User;
-	if($user) {
+	if($user) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
-		if(!empty($_POST['username']) && !empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['role'])) {
+		if(!empty($_POST['username']) && !empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['role'])) :
 			$user->username 	= trim($_POST['username']);
 			$user->first_name = trim($_POST['first_name']);
 			$user->last_name 	= trim($_POST['last_name']);
@@ -45,9 +47,9 @@ if(isset($_POST['submit'])) {
 				User::notifyMessage($seesion->message, "failure");
 				echo "</div>";
 			endif;
-		}
-	}
-}
+		endif;
+	endif;
+endif;
 ?>
 <?php include "includes/user_form.php"; ?>
 				<small>*Note: Password is required for all changes.</small>

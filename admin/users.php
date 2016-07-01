@@ -52,7 +52,7 @@
 
 				</tbody>
 			</table>
-<?php include "delete.php"; ?>
+<?php include "delete_user.php"; ?>
 		</div>
 	  </div>
  </div><!-- /.row -->

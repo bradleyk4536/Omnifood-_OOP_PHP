@@ -23,7 +23,7 @@
 	 	<link rel="stylesheet" href="css/styles.css" type="text/css">
 	 	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
  	 	<script src="js/jquery.js"></script>
-  	 	<script>tinymce.init({ selector:'textarea' });</script>
+<!--  	 	<script>tinymce.init({ selector:'textarea' });</script>-->
 
 
 

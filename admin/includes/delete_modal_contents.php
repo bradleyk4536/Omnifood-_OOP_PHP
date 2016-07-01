@@ -8,7 +8,7 @@
         <h4 class="modal-title">Delete</h4>
       </div>
       <div class="modal-body">
-       <p>Deleting user is irreversible.<strong>Are you sure you want to delete?</strong></p>
+       <p>Deleting is irreversible.<strong>Are you sure you want to delete?</strong></p>
       </div>
       <div class="modal-footer">
       	<a href="" class="btn btn-danger modal_delete_link">Delete</a>

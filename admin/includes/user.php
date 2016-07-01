@@ -5,7 +5,7 @@ protected static $find_all_sql = "SELECT users.user_id, users.role, users.userna
 
 protected static $create_sql = "INSERT INTO users(username, first_name, last_name, email, password, role) VALUES (:username, :first_name, :last_name, :email, :password, :role) ";
 
-protected static $find_by_id_sql = "SELECT users.user_id, users.role, users.username, users.first_name, users.last_name, users.email, users.password, role.role_id, role.role FROM users LEFT JOIN role ON users.role = role.role WHERE user_id = :user_id ";
+protected static $find_by_id_sql = "SELECT users.user_id, users.role, users.username, users.first_name, users.last_name, users.email, users.password, role.role_id, role.role FROM users LEFT JOIN role ON users.role = role.role WHERE user_id = :id ";
 
 protected static $update_sql = "UPDATE users SET username=:username, first_name=:first_name, last_name=:last_name, email=:email, role=:role, password=:password WHERE user_id = :id ";
 protected static $delete_sql = "DELETE FROM users WHERE user_id = :id ";

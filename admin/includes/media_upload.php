@@ -2,8 +2,9 @@
 	class Media extends Db_Crud {
 		protected static $find_all_sql = "SELECT * FROM media ";
 		protected static $delete_sql = "DELETE FROM media WHERE image_id = :id ";
-		protected static $create_sql = "INSERT INTO media(title, caption, description, filename, alternate_text, type, size) VALUES (:title, :caption, :description, :filename, :alternate_text, :type, :size)";
-		protected static $update_sql = "UPDATE media SET title=:title, caption=:caption, description=:description, alternate_text=:alternate_text";
+		protected static $create_sql = "INSERT INTO media(caption, filename, alternate_text, type, size) VALUES (:caption, :filename, :alternate_text, :type, :size)";
+		protected static $update_sql = "UPDATE media SET caption=:caption, filename=:filename,  alternate_text=:alternate_text, type=:type, size=:size WHERE image_id = :id ";
+		protected static $find_by_id_sql = "SELECT * FROM media WHERE image_id = :id ";
 		public $image_id;
 		public $title;
 		public $caption;
@@ -50,8 +51,15 @@
 
 			endif;
 		}
+/*	CAPTURE IMAGE FILE DATA IF NOT CHANGED DURING UPDATE */
+		public function save_file_data($fileData) {
 
-
+			if(!empty($fileData)) :
+				$this->filename = $fileData->filename;
+				$this->type 	 = $fileData->type;
+				$this->size		 = $fileData->size;
+			endif;
+		}
 //		dynamic image dirctory
 		public function picture_path() {
 			return $this->upload_directory.DS.$this->filename;
@@ -99,7 +107,7 @@
 
 /* DELETE IMAGE FROM DATABASE AND DIRECTORY */
 
-		public static function delete_image($superGlobal){
+		public function delete_image($superGlobal){
 
 			if(static::deleteRecord($superGlobal)) :
 				$target_path = SITE_ROOT.DS. 'admin' . DS . $this->picture_path();
@@ -119,21 +127,21 @@
 
 				case "update":
 					$result = static::update();
+					$this->image_id = $_GET['id'];
+
 				break;
 			endswitch;
 
-			$this->title 			 = static::val_string($this->title);
+
 			$this->caption 		 = static::val_string($this->caption);
-			$this->description 	 = static::val_string($this->description);
 			$this->alternate_text = static::val_string($this->alternate_text);
 
-			$result->bindParam(':title', $this->title, PDO::PARAM_STR);
 			$result->bindParam(':caption', $this->caption, PDO::PARAM_STR);
-			$result->bindParam(':description', $this->description, PDO::PARAM_STR);
 			$result->bindParam(':filename', $this->filename, PDO::PARAM_STR);
 			$result->bindParam('alternate_text', $this->alternate_text, PDO::PARAM_STR);
 			$result->bindParam(':type', $this->type, PDO::PARAM_STR);
 			$result->bindParam(':size', $this->size, PDO::PARAM_INT);
+			if($control === "update") { $result->bindParam(':id', $this->image_id, PDO::PARAM_INT); }
 
 			return $result;
 

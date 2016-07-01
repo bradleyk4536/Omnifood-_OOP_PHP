@@ -10,7 +10,7 @@ class Db_Crud {
 public static function find_by_id($id) {
 	global $database;
 	$result = $database->connection->prepare( static::$find_by_id_sql );
-	$result->bindParam(':user_id', $id, PDO::PARAM_INT);
+	$result->bindParam(':id', $id, PDO::PARAM_INT);
 	$result->execute();
 
 	$object = $result->fetch(PDO::FETCH_OBJ);

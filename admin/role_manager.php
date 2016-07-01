@@ -11,7 +11,7 @@
 	  <div class="col-lg-12">
 			<h1 class="page-header">Omnifoods &mdash; <small>Role Manager</small></h1>
 			<ol class="breadcrumb">
-				 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Dashboard</a></li>
+				 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Site Manager</a></li>
 				 <li><i class="ion-ios-people"></i> <a href="users.php">View Users</a></li>
 				 <li><i class="ion-android-restaurant"></i> <a href="../index.php"> View Site</a></li>
 				 <li><i class="fa fa-info"></i> <a href="#" data-toggle="modal" data-target="#roleModal">Info</a></li>
