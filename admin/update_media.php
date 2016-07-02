@@ -25,25 +25,28 @@ if(isset($_POST['submit'])) :
 	if($media) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
 		if(!empty($_POST['caption']) && !empty($_POST['alternate_text'])) :
-			$media->caption 	= trim($_POST['caption']);
+			$media->caption 		  = trim($_POST['caption']);
 			$media->alternate_text = trim($_POST['alternate_text']);
 			$media->save_file_data($saveMedia);
 
 				if(empty($_FILES['media'])) :
-				  print_r($saveMedia);
 				  	/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
 				  $media->add_up_result = $media->add_update("update");
 				  else :
-				  	$media->set_file($_FILES['media']);
-				  	$media->save();
-				  	/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
-					$media->add_up_result = $media->add_update("update");
+				  	  $media->media_result = $media->set_file($_FILES['media']);
+					  if (!$media->media_result) :
+				  			$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD NEW MEDIA <br>" . $media->file_errors;
+				  	  else:
+						$media->save();
+						/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
 
+				  	  endif;
+				  $media->add_up_result = $media->add_update("update");
 				endif;
 /*TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
 			if($media->add_up_result) :
 				$media->add_up_result->execute();
-				$session->message = "<i class='ion-ios-camera'></i> SUCCESS &mdash; MEDIA UPDATED";
+				$session->message = "<i class='ion-ios-camera'></i> SUCCESS &mdash; MEDIA UPDATED <br>" . $media->file_errors;
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
 				User::notifyMessage($session->message, "success");
 				echo "</div>";
@@ -51,7 +54,7 @@ if(isset($_POST['submit'])) :
 			else :
 				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE MEDIA";
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
-				User::notifyMessage($seesion->message, "failure");
+				User::notifyMessage($session->message, "failure");
 				echo "</div>";
 			endif;
 		endif;

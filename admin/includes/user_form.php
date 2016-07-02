@@ -1,9 +1,6 @@
 <form action="" method="post" enctype="multipart/form-data">
 	<div class="col-md-6 col-md-offset-3">
 		<div class="form-group">
-			<input type="file" name="user_image">
-		</div>
-		<div class="form-group">
 			<label for="username">Username</label>
 			<input type="text" name="username" class="form-control" required value="<?php echo $user->username; ?>">
 

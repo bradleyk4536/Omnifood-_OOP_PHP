@@ -2,6 +2,7 @@
 <?php
 	if(isset($_POST['submit'])) {
 		if(!empty($_POST['username']) && !empty($_POST['password']) ) {
+
 			$username = trim($_POST['username']);
 			$password = trim($_POST['password']);
 			$verify = User::check_user($username, $password);

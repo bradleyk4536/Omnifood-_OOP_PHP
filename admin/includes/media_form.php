@@ -40,9 +40,11 @@
 	</p>
 </div>
 <div class="info-box-footer clearfix">
+ <?php if(!empty($_GET)) : ?>
   <div class="info-box-delete pull-left">
 		<a rel='<?php echo $media->image_id ?>' href='javascript:void(0)' class='btn btn-danger btn-lg delete_link'>Delete</a>
   </div>
+ <?php endif; ?>
   <div class="info-box-update pull-right ">
 		<input type="submit" name="submit" value="Update" class="btn btn-primary btn-lg ">
   </div>
