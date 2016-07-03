@@ -21,7 +21,7 @@
 			 </div><!-- /.row -->
 		</div><!-- /.container-fluid -->
 		<hr>
-		Hello
+		<a href="add_hero.php">Hero Section</a>
   </div><!-- /#page-wrapper -->
 </div>
     <!-- /#wrapper -->

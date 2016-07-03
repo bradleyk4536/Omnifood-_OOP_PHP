@@ -10,6 +10,7 @@
 	require_once(INCLUDES_PATH.DS."media_upload.php");
 	require_once(INCLUDES_PATH.DS."user.php");
 	require_once(INCLUDES_PATH.DS."role.php");
+	require_once(INCLUDES_PATH.DS."hero.php");
 
 //	require_once(INCLUDES_PATH.DS."comment.php");
 	require_once(INCLUDES_PATH.DS."session.php");
