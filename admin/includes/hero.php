@@ -1,10 +1,10 @@
 <?php
 	class Hero extends Media {
-		protected static $find_all_sql = "SELECT * FROM hero WHERE display = TRUE ";
+		protected static $find_all_sql = "SELECT * FROM hero WHERE display = 'true' ";
 
-		protected static $create_sql = "INSERT INTO hero(brand_icon, brand_text, newsletter_text, hero_text, hero_subtext, display) VALUES (:brand_icon, :brand_text, :newsletter_text, :hero_text, :hero_subtext, :display) ";
+		protected static $create_sql = "INSERT INTO hero(brand_icon, brand_text, logo, newsletter_text, hero_text, hero_subtext, display) VALUES (:brand_icon, :brand_text, :logo, :newsletter_text, :hero_text, :hero_subtext, :display) ";
 
-		protected static $update_sql = "UPDATE hero SET brand_icon=:brand_icon, brand_text=:brand_text, background_img=:background_img, logo=:logo, newsletter_text=:newsletter_text, hero_text=:hero_text, hero_subtext=:hero_subtext, display=:display WHERE hero_id = :id ";
+		protected static $update_sql = "UPDATE hero SET brand_icon=:brand_icon, brand_text=:brand_text, logo=:logo, newsletter_text=:newsletter_text, hero_text=:hero_text, hero_subtext=:hero_subtext, display=:display WHERE hero_id = :id ";
 
 		protected static $find_by_id_sql = "SELECT * FROM hero WHERE hero_id = :id ";
 
@@ -16,13 +16,19 @@
 		public $newsletter_text;
 		public $hero_text;
 		public $hero_subtext;
-		public $display;
+		public $display = "false";
 		public $add_up_result;
 		public $media_result;
 
+			/*	CAPTURE IMAGE FILE DATA IF NOT CHANGED DURING UPDATE */
+	public function save_file_data($fileData) {
+		if(!empty($fileData)) :
+			$this->filename = $fileData->logo;
+		endif;
+	}
 
 		public function add_update($control) {
-		global $database;
+		global $filename;
 		switch ($control):
 			case "add":
 				$result = static::create();
@@ -37,7 +43,7 @@
 		$this->brand_icon 		 = static::val_string($this->brand_icon);
 		$this->brand_text 		 = static::val_string($this->brand_text);
 //		$this->background_img 	 = static::val_string($this->filename);
-//		$this->logo 				 = static::val_string($this->filename);
+		$this->logo 				 = static::val_string($this->filename);
 		$this->newsletter_text 	 = static::val_string($this->newsletter_text);
 		$this->hero_text 			 = static::val_string($this->hero_text);
 		$this->hero_subtext    	 = static::val_string($this->hero_subtext);
@@ -46,7 +52,7 @@
 		$result->bindParam(':brand_icon', $this->brand_icon, PDO::PARAM_STR);
 		$result->bindParam(':brand_text', $this->brand_text, PDO::PARAM_STR);
 //		$result->bindParam(':background_img', $this->background_img, PDO::PARAM_STR);
-//		$result->bindParam(':logo', $this->logo, PDO::PARAM_STR);
+		$result->bindParam(':logo', $this->filename, PDO::PARAM_STR);
 		$result->bindParam(':newsletter_text', $this->newsletter_text, PDO::PARAM_STR);
 		$result->bindParam(':hero_text', $this->hero_text, PDO::PARAM_STR);
 		$result->bindParam(':hero_subtext', $this->hero_subtext, PDO::PARAM_STR);

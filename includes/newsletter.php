@@ -1,3 +1,4 @@
+<?php $newsletter = Hero::read_all(); ?>
 <!--DISPLAYED ON LANDING PAGE-->
 <section id="newsletter">
 	<div class="container">
@@ -10,8 +11,10 @@
 	<?php endif; ?>
 		<div class="row text-center">
 			<div class="col-sm-6">
-				<p class="lead"><strong>Subscribe to our great newsletter</strong></p>
+			<?php foreach($newsletter as $news ) : ?>
+				<p class="lead"><strong><?php echo $news->newsletter_text; ?></strong></p>
 			</div>
+			<?php endforeach; ?>
 			<div class="col-sm-4">
 				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newsletter_modal">Subscribe now</button>
 			</div>

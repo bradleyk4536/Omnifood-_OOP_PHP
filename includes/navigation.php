@@ -1,3 +1,4 @@
+<?php $navs = Hero::read_all(); ?>
 <header class="site-header" role="banner"><!--	NAVBAR-->
 	<div class="navbar-wraper">
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -10,7 +11,9 @@
 				  <span class="icon-bar"></span>
 				  <span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.php"><i class="ion-android-restaurant"></i> Omnifoods</a>
+				<?php foreach( $navs as $nav ) : ?>
+				<a class="navbar-brand" href="index.php"><i class="<?php echo $nav->brand_icon; ?>"></i> <?php echo $nav->brand_text; ?></a>
+				<?php endforeach; ?>
 			 </div><!-- Collect the nav links, forms, and other content for toggling -->
 			 <div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">

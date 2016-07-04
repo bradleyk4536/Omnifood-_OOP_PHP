@@ -16,15 +16,8 @@
 		<div class="form-group">
 		<label for="logo_image">Logo Image</label>
 		<a class="thumbnail" href="#">
-			<img src="media/<?php echo $hero->filename; ?>" alt="">
+			<img class="logo" src="media/<?php echo $hero->logo; ?>" alt="">
 			<input type="file" name="logo">
-		</a>
-		</div>
-		<div class="form-group">
-		<label for="background_img">Background Image</label>
-		<a class="thumbnail" href="#">
-			<img src="media/<?php echo $background_img->filename; ?>" alt="">
-			<input type="file" name="background_img">
 		</a>
 		</div>
 		<div class="form-group">
@@ -39,7 +32,6 @@
 			<label for="news_text">Newsletter Text</label>
 			<input type="text" name="news_text" class="form-control" value="<?php echo $hero->newsletter_text; ?>">
 		</div>
-
 	</div>
 <div class="col-md-4" >
 <div  class="photo-info-box">
@@ -52,8 +44,8 @@
 	  <span class="ion-ios-monitor-outline"></span> Display this Hero Section on site
 	 </p>
 	 <div class="form-group">
-	 	 <input type="radio" name="display" value="True"> Yes <br>
-	 	 <input type="radio" name="display" value="False" checked> No
+	 	 <input type="radio" name="display" value="true" <?php if(isset($hero->display) && $hero->display === "true") echo 'checked'?>> Yes <br>
+	 	 <input type="radio" name="display" value="false" <?php if(isset($hero->display) && $hero->display === "false") echo 'checked'; ?>>No
 	 </div>
 	<div class="info-box-footer clearfix">
   <div class="info-box-update pull-right ">

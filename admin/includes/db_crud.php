@@ -3,8 +3,6 @@
 
 class Db_Crud {
 
-
-
 /* GET SPECIFIC RECORD FROM TABLE */
 
 public static function find_by_id($id) {
