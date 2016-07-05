@@ -3,20 +3,18 @@
 <div id="wrapper">
 <?php include "includes/admin_top_navigation.php"; ?>
 <?php
-$section = new Section();
+$page = new Page();
 if(isset($_POST['submit'])) :
-	if($section) :
+	if($page) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
-		if(!empty($_POST['section_title'])) :
-			$section->section_icon 				= trim($_POST['section_icon']);
-			$section->section_title 			= trim($_POST['section_title']);
-			$section->section_description 	= trim($_POST['section_description']);
-			$section->display						= trim($_POST['display']);
+		if(!empty($_POST['page_name']) && !empty($_POST['page_link'])) :
+			$page->page_name 				= trim($_POST['page_name']);
+			$page->page_link 				= trim($_POST['page_link']);
 /* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
-				$section->add_up_result = $section->add_update("add");
+				$page->add_up_result = $page->add_update("add");
 	/*	TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
-				if($section->add_up_result) :
-					$section->add_up_result->execute();
+				if($page->add_up_result) :
+					$page->add_up_result->execute();
 
 					$session->message = "<i class='ion-happy-outline'></i> SUCCESS &mdash; NEW SECTION ADDED <br>";
 				else :
@@ -37,21 +35,21 @@ endif;
 				<ol class="breadcrumb">
 				 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Site Manager</a></li>
 				 <li>
-						  <i class="fa fa-indent"></i>&emsp;<a href="add_section.php">Add Section</a>
+						  <i class="fa fa-indent"></i>&emsp;<a href="add_page.php">Add Page</a>
 				 </li>
 				 <li><i class="ion-ios-camera"></i>&emsp;<a href="../index.php">View Site</a></li>
 				</ol>
-					<?php if($section->add_up_result && isset($session->message)) : ?>
+					<?php if($page->add_up_result && isset($session->message)) : ?>
 							<div class="col-sm-6 col-sm-offset-3">
-								<?php Section::notifyMessage($session->message, "success"); ?>
+								<?php Page::notifyMessage($session->message, "success"); ?>
 							</div>
 							<?php endif; ?>
-							<?php if(($section->add_up_result === false) && isset($session->message)) : ?>
+							<?php if(($page->add_up_result === false) && isset($session->message)) : ?>
 							<div class="col-sm-6 col-sm-offset-3">
-								<?php Section::notifyMessage($session->message, "failure"); ?>
+								<?php Page::notifyMessage($session->message, "failure"); ?>
 							</div>
 					<?php endif; ?>
-<?php include "includes/section_form.php"; ?>
+<?php include "includes/page_form.php"; ?>
 		  </div>
 	 </div><!-- /.row -->
 	</div><!-- /.container-fluid -->

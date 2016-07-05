@@ -21,8 +21,11 @@
 	 	<link href="css/sb-admin.css" rel="stylesheet">
 
 	 	<link rel="stylesheet" href="css/styles.css" type="text/css">
+	 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
 	 	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
  	 	<script src="js/jquery.js"></script>
+
+ 	 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   	 	<script>tinymce.init({ selector:'textarea' });</script>
 
 

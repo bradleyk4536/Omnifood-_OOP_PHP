@@ -32,6 +32,7 @@
 	 	 <input type="radio" name="display" value="true" <?php if(isset($section->display) && $section->display === "true") echo 'checked'?>> Yes <br>
 	 	 <input type="radio" name="display" value="false" <?php if(isset($section->display) && $section->display === "false") echo 'checked'; ?>>No
 	 </div>
+
 	<div class="info-box-footer clearfix">
   <div class="info-box-update pull-right ">
 		<input type="submit" name="submit" value="Update" class="btn btn-primary btn-lg ">
