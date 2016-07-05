@@ -21,7 +21,7 @@
 			 </div><!-- /.row -->
 		</div><!-- /.container-fluid -->
 		<hr>
-		<a href="update_hero.php?id=11">Hero Section</a>
+		<a href="update_section.php?id=3">Hero Section</a>
   </div><!-- /#page-wrapper -->
 </div>
     <!-- /#wrapper -->

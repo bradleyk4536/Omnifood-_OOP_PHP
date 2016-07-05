@@ -51,7 +51,7 @@ if(isset($_POST['submit'])) :
 				endif;
 /*TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
 			if($hero->add_up_result) :
-				$result = $hero->add_up_result->execute();
+				$hero->add_up_result->execute();
 				$session->message = "<i class='ion-happy-outline'></i> SUCCESS &mdash; HERO SECTION UPDATED <br>" . $hero->file_errors;
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
 				Hero::notifyMessage($session->message, "success");
