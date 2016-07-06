@@ -1,14 +1,10 @@
 <form action="" method="post" enctype="multipart/form-data">
 
 	<div class="col-md-8">
-		<div class="col-md-6 col-md-offset-3">
-			<div class="form-group">
+		<div class="form-group">
 			<label for="section_title">Section Icon</label>
 			<input type="text" class="form-control" name="section_icon" value="<?php echo $section->section_icon; ?>">
 		</div>
-
-		</div>
-		<div class="clearfix"></div>
 		<div class="form-group">
 			<label for="section_title">Section Title</label>
 			<input type="text" class="form-control" name="section_title" value="<?php echo $section->section_title; ?>">

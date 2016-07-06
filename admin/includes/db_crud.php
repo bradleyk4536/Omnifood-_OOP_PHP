@@ -91,6 +91,17 @@ public static function find_by_id($id) {
 			endif;
 	}
 
+	/* DISPLAY ALL TABLE ENTRIES FROM ACCORDION */
+	public static function getHero($sql) { static::val_string(static::$find_all_sql = $sql); }
+
+	public static function getAll($sql) {
+
+		$statement = "SELECT * FROM section WHERE section_name = '{$sql}' ";
+
+		static::val_string(static::$find_all_sql = $statement);
+
+	}
+
 	/* USER MESSAGES */
 	public static function notifyMessage($message, $type){
 

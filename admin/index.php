@@ -14,34 +14,88 @@
 								 <?php if($_SESSION['role'] === "Admin") : ?>
 								 <li><i class="ion-person-add"></i> <a href="users.php">User Manager</a></li>
 								 <li><i class="ion-ios-camera"></i> <a href="medias.php">Media Manager</a></li>
-								 <li><i class="ion-ios-camera"></i> <a href="add_page.php">Page Manager</a></li>
 								 <?php endif; ?>
 								 <li><i class="ion-android-restaurant"></i> <a href="../index.php"> View Site</a></li>
 						</ol>
 				  </div>
 			 </div><!-- /.row -->
 		</div><!-- /.container-fluid -->
-		<hr>
-		<ol class="breadcrumb">
-							 <li><i class="fa fa-indent"></i><a href="add_section.php"> Add Section</a></li>
-						</ol>
-		<div id="accordion">
-		<?php foreach($sections as $section ) : ?>
-			<h3><a href="#"><i class="<?php echo $section->section_icon; ?>"></i><strong> <?php echo $section->section_title; ?></strong></a></h3>
-<div>
-    <p>
-        <strong>HTML5</strong> is a markup language for structuring and presenting content for the World Wide Web, and is a core technology of the Internet originally proposed by Opera Software. It is the fifth revision of the HTML standard (created in 1990 and standardized as HTML4 as of 1997) and, as of July 2012, is still under development.
-    </p>
-    <span><a href="update_hero.php?id=11">View</a></span>
-</div>
-
-		<?php endforeach; ?>
-
-
-
-
-
+<div id="accordion">
+<?php include "includes/hero_accordion.php"; ?>
+<?php include "includes/get_food_accordion.php"; ?>
+		<h3><a href="#"><strong>How It Works &mdash; Simple As 1, 2, 3</strong></a></h3>
+		<div>
+			<ol class="breadcrumb">
+				<li><i class="fa fa-indent"></i><a href="add_section.php"> Add Section</a></li>
+			</ol>
+		  <hr>
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>Logo Image</th>
+						<th>Tag Line</th>
+						<th>Display</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			 <span><a href="update_hero.php?id=11">View</a></span>
 		</div>
+		<h3><a href="#"><strong>Were Currently In These Cities</strong></a></h3>
+		<div>
+			<ol class="breadcrumb">
+				<li><i class="fa fa-indent"></i><a href="add_section.php"> Add Section</a></li>
+			</ol>
+		  <hr>
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>Logo Image</th>
+						<th>Tag Line</th>
+						<th>Display</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			 <span><a href="update_hero.php?id=11">View</a></span>
+		</div>
+		<h3><a href="#"><strong>Our Customers Can't Live Without Us</strong></a></h3>
+		<div>
+			<ol class="breadcrumb">
+				<li><i class="fa fa-indent"></i><a href="add_section.php"> Add Section</a></li>
+			</ol>
+		  <hr>
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>Logo Image</th>
+						<th>Tag Line</th>
+						<th>Display</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			 <span><a href="update_hero.php?id=11">View</a></span>
+		</div>
+		<h3><a href="#"><strong>Start Eating Healthy Today</strong></a></h3>
+		<div>
+			<ol class="breadcrumb">
+				<li><i class="fa fa-indent"></i><a href="add_section.php"> Add Section</a></li>
+			</ol>
+		  <hr>
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>Logo Image</th>
+						<th>Tag Line</th>
+						<th>Display</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			 <span><a href="update_hero.php?id=11">View</a></span>
+		</div>
+</div>
   </div><!-- /#page-wrapper -->
 </div>
     <!-- /#wrapper -->

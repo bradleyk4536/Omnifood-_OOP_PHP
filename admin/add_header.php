@@ -3,6 +3,7 @@
 <div id="wrapper">
 <?php include "includes/admin_top_navigation.php"; ?>
 <?php
+Section::setSection("section2");
 $section = new Section();
 if(isset($_POST['submit'])) :
 	if($section) :
@@ -18,9 +19,9 @@ if(isset($_POST['submit'])) :
 				if($section->add_up_result) :
 					$section->add_up_result->execute();
 
-					$session->message = "<i class='ion-happy-outline'></i> SUCCESS &mdash; NEW SECTION ADDED <br>";
+					$session->message = "<i class='ion-happy-outline'></i> SUCCESS &mdash; NEW SECTION HEADER ADDED <br>";
 				else :
-						$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD NEW SECTION <br>";
+						$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD NEW SECTION HEADER<br>";
 				endif;
 		endif;
 	endif;
