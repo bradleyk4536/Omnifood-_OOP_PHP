@@ -20,17 +20,9 @@
 
 		public function add_update($control) {
 		global $filename;
-		switch ($control):
-			case "add":
-				$result = static::create();
-			break;
 
-			case "update":
-				$result = static::update();
-				$this->section_id = static::val_int($_GET['id']);
+		$result = static::operation($control);
 
-			break;
-		endswitch;
 		$this->section_icon 		 		= static::val_string($_POST['section_icon']);
 		$this->section_title 		 	= static::val_string($_POST['section_title']);
 		$this->section_description 	= static::val_string($_POST['section_description']);
@@ -39,9 +31,14 @@
 		$result->bindParam(':icon', $this->section_icon, PDO::PARAM_STR);
 		$result->bindParam(':title', $this->section_title, PDO::PARAM_STR);
 		$result->bindParam(':description', $this->section_description, PDO::PARAM_STR);
-		if($control === "add") {$result->bindParam(':section_name', $this->setSection, PDO::PARAM_STR);}
+		if($control === "add") :
+			$result->bindParam(':section_name', $this->setSection, PDO::PARAM_STR);
+		endif;
 		$result->bindParam(':display', $this->display, PDO::PARAM_STR);
-		if($control === "update") : $result->bindParam(':id', $this->section_id, PDO::PARAM_INT); endif;
+		if($control === "update") :
+			$this->section_id = static::val_int($_GET['id']);
+			$result->bindParam(':id', $this->section_id, PDO::PARAM_INT);
+		endif;
 
 		return $result;
 

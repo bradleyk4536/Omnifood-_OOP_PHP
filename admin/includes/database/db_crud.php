@@ -95,11 +95,23 @@ public static function find_by_id($id) {
 	public static function getHero($sql) { static::val_string(static::$find_all_sql = $sql); }
 
 	public static function getAll($sql) {
-
 		$statement = "SELECT * FROM section WHERE section_name = '{$sql}' ";
-
 		static::val_string(static::$find_all_sql = $statement);
+	}
 
+	/* DETERMIN TO ADD OR UPDATE TABLE */
+
+	public static function operation($control) {
+		switch ($control):
+			case "add":
+				$result = static::create();
+			break;
+			case "update":
+				$result = static::update();
+			break;
+		endswitch;
+
+		return $result;
 	}
 
 	/* USER MESSAGES */

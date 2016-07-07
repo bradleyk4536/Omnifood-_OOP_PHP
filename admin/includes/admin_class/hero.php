@@ -29,17 +29,9 @@
 
 		public function add_update($control) {
 		global $filename;
-		switch ($control):
-			case "add":
-				$result = static::create();
-			break;
 
-			case "update":
-				$result = static::update();
-				$this->hero_id = $_GET['id'];
+		$result = static::operation($control);
 
-			break;
-		endswitch;
 		$this->brand_icon 		 = static::val_string($_POST['brand_icon']);
 		$this->brand_text 		 = static::val_string($_POST['brand_text']);
 		$this->logo 				 = static::val_string($this->filename);
@@ -54,7 +46,10 @@
 		$result->bindParam(':hero_text', $this->hero_text, PDO::PARAM_STR);
 		$result->bindParam(':hero_subtext', $this->hero_subtext, PDO::PARAM_STR);
 		$result->bindParam(':display', $this->display, PDO::PARAM_STR);
-		if($control === "update") { $result->bindParam(':id', $this->hero_id, PDO::PARAM_INT); }
+		if($control === "update") :
+			$this->hero_id = static::val_int($_GET['id']);
+			$result->bindParam(':id', $this->hero_id, PDO::PARAM_INT);
+		endif;
 
 		return $result;
 

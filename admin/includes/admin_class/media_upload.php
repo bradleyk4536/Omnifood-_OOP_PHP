@@ -122,38 +122,30 @@
 	/* DELETE IMAGE FROM DATABASE AND DIRECTORY */
 
 	public function delete_image($superGlobal){
-
 		if(static::deleteRecord($superGlobal)) :
 			$target_path = SITE_ROOT.DS. 'admin' . DS . $this->picture_path();
 			return unlink($target_path) ? true : false;
 		else :
 			return false;
 		endif;
-
 	}
 
 	public function add_update($control) {
 		global $database;
-		switch ($control):
-			case "add":
-				$result = static::create();
-			break;
 
-			case "update":
-				$result = static::update();
-				$this->image_id = $_GET['id'];
+		$result = static::operation($control);
 
-			break;
-		endswitch;
 		$this->caption 		 = static::val_string($_POST['caption']);
 		$this->alternate_text = static::val_string($_POST['alternate_text']);
-
 		$result->bindParam(':caption', $this->caption, PDO::PARAM_STR);
 		$result->bindParam(':filename', $this->filename, PDO::PARAM_STR);
 		$result->bindParam('alternate_text', $this->alternate_text, PDO::PARAM_STR);
 		$result->bindParam(':type', $this->type, PDO::PARAM_STR);
 		$result->bindParam(':size', $this->size, PDO::PARAM_INT);
-		if($control === "update") : $result->bindParam(':id', $this->image_id, PDO::PARAM_INT); endif;
+		if($control === "update") :
+			$this->image_id = static::val_int($_GET['id']);
+			$result->bindParam(':id', $this->image_id, PDO::PARAM_INT);
+		endif;
 
 		return $result;
 
