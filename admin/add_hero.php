@@ -1,20 +1,13 @@
 <?php include "includes/admin_header.php"; ?>
 <?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
-<?php include "includes/admin_top_navigation.php"; ?>
 <?php
 $hero = new Hero();
 if(isset($_POST['submit'])) :
 	if($hero) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
 		if(!empty($_POST['brand_text']) && !empty($_POST['hero_text'])) :
-			$hero->brand_icon 			= trim($_POST['brand_icon']);
-			$hero->brand_text 			= trim($_POST['brand_text']);
-			$hero->hero_text 				= trim($_POST['hero_text']);
-			$hero->hero_subtext 			= trim($_POST['sub_text']);
-			$hero->display 				= trim($_POST['display']);
-			$hero->newsletter_text 		= trim($_POST['news_text']);
-			$hero->logo 			 = $hero->set_file($_FILES['logo']);
+			$hero->logo = $hero->set_file($_FILES['logo']);
 			if(!$hero->logo) :
 				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD <br> LOGO IMAGE"; //. $media->file_errors;
 			else:
@@ -35,7 +28,6 @@ endif;
 ?>
 <?php include "includes/admin_top_navigation.php"; ?>
 	<div id="page-wrapper">
-
 	<div class="container-fluid">
 		 <!-- Page Heading -->
 	 <div class="row">

@@ -7,7 +7,7 @@
 		</div>
 		<div class="form-group">
 			<label for="section_title">Section Title</label>
-			<input type="text" class="form-control" name="section_title" value="<?php echo $section->section_title; ?>">
+			<input type="text" class="form-control" name="section_title" value="<?php echo $section->section_title; ?>" required>
 		</div>
 		<div class="form-group">
 			<label for="brand_text">Section Description</label>

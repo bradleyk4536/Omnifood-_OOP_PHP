@@ -1,19 +1,16 @@
 <?php include "init.php"; ?>
 <?php
-	if(isset($_POST['submit'])) {
-		if(!empty($_POST['username']) && !empty($_POST['password']) ) {
-
-			$username = trim($_POST['username']);
-			$password = trim($_POST['password']);
-			$verify = User::check_user($username, $password);
-			if($verify) {
+	if(isset($_POST['submit'])) :
+		if(!empty($_POST['username']) && !empty($_POST['password']) ) :
+			$verify = User::check_user();
+			if($verify) :
 				$session->set_login_sessions($verify);
 				header("Location: admin/index.php");
-			} else {
+			else :
 				$session->message = "<i class='ion-lock-combination'></i> STOP &mdash; YOU ARE NOT AUTHORIZED TO LOGIN TO THIS SITE";
-			}
-		}
-	}
+			endif;
+		endif;
+	endif;
 ?>
 <section id="login">
 <!--	MODAL FORM NOT DISPLAYED UNTIL BUTTON IS SELECTED-->

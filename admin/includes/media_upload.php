@@ -145,8 +145,8 @@
 
 			break;
 		endswitch;
-		$this->caption 		 = static::val_string($this->caption);
-		$this->alternate_text = static::val_string($this->alternate_text);
+		$this->caption 		 = static::val_string(trim($_POST['caption']));
+		$this->alternate_text = static::val_string(trim($_POST['alternate_text']));
 
 		$result->bindParam(':caption', $this->caption, PDO::PARAM_STR);
 		$result->bindParam(':filename', $this->filename, PDO::PARAM_STR);

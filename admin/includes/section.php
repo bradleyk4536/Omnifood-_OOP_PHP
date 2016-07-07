@@ -33,10 +33,10 @@
 
 			break;
 		endswitch;
-		$this->section_icon 		 		= static::val_string($this->section_icon);
-		$this->section_title 		 	= static::val_string($this->section_title);
-		$this->section_description 	= static::val_string($this->section_description);
-
+		$this->section_icon 		 		= static::val_string(trim($_POST['section_icon']));
+		$this->section_title 		 	= static::val_string(trim($_POST['section_title']));
+		$this->section_description 	= static::val_string(trim($_POST['section_description']));
+		$this->display 					= static::val_string(trim($_POST['display']));
 		$result->bindParam(':icon', $this->section_icon, PDO::PARAM_STR);
 		$result->bindParam(':title', $this->section_title, PDO::PARAM_STR);
 		$result->bindParam(':description', $this->section_description, PDO::PARAM_STR);

@@ -9,7 +9,6 @@
 	$media = Media::find_by_id($_GET['id']);
 	$saveMedia = $media;
 ?>
-
 <div id="page-wrapper">
 	<div class="container-fluid">
 		 <!-- Page Heading -->
@@ -25,10 +24,7 @@ if(isset($_POST['submit'])) :
 	if($media) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
 		if(!empty($_POST['caption']) && !empty($_POST['alternate_text'])) :
-			$media->caption 		  = trim($_POST['caption']);
-			$media->alternate_text = trim($_POST['alternate_text']);
 			$media->save_file_data($saveMedia);
-
 				if(empty($_FILES['media'])) :
 				  	/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
 				  $media->add_up_result = $media->add_update("update");
@@ -39,7 +35,6 @@ if(isset($_POST['submit'])) :
 				  	  else:
 						$media->save();
 						/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
-
 				  	  endif;
 				  $media->add_up_result = $media->add_update("update");
 				endif;
@@ -50,7 +45,6 @@ if(isset($_POST['submit'])) :
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
 				User::notifyMessage($session->message, "success");
 				echo "</div>";
-
 			else :
 				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE MEDIA";
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
@@ -64,11 +58,8 @@ endif;
 <?php include "includes/media_form.php"; ?>
 			  </div>
 		 </div>
-<?php include "delete_media.php"; ?>
-		 <!-- /.row -->
-	</div>
-	<!-- /.container-fluid -->
-</div>
-<!-- /#page-wrapper -->
+<?php include "delete_media.php"; ?><!-- /.row -->
+	</div><!-- /.container-fluid -->
+</div><!-- /#page-wrapper -->
 </div>
 <?php include "includes/admin_footer.php"; ?>

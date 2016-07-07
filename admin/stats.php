@@ -2,7 +2,6 @@
 <?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
  <div id="wrapper">
 	<?php include "includes/admin_top_navigation.php"; ?>
-
   <div id="page-wrapper">
 		<div class="container-fluid">
 			 <!-- Page Heading -->
@@ -21,6 +20,5 @@
 		<hr>
 		<?php include "includes/admin_dashboard.php"; ?>
   </div><!-- /#page-wrapper -->
-</div>
-    <!-- /#wrapper -->
+</div><!-- /#wrapper -->
 <?php include "includes/admin_footer.php"; ?>

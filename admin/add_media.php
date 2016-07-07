@@ -1,24 +1,16 @@
 <?php include "includes/admin_header.php"; ?>
 <?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
-<?php include "includes/admin_top_navigation.php"; ?>
 <?php
 $media = new Media();
-
 if(isset($_POST['submit'])) :
 	if($media) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
 		if(!empty($_POST['caption']) && !empty($_POST['alternate_text'])) :
-			$media->caption 			= trim($_POST['caption']);
-			$media->alternate_text 	= trim($_POST['alternate_text']);
-
 			$media->media_result = $media->set_file($_FILES['media']);
 			if(!$media->media_result) :
-
 				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD NEW MEDIA <br>" . $media->file_errors;
-
 			else:
-
 				$media->save();
 /* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
 				$media->add_up_result = $media->add_update("add");
@@ -36,7 +28,6 @@ endif;
 ?>
 <?php include "includes/admin_top_navigation.php"; ?>
 	<div id="page-wrapper">
-
 	<div class="container-fluid">
 		 <!-- Page Heading -->
 	 <div class="row">
@@ -57,15 +48,8 @@ endif;
 							</div>
 					<?php endif; ?>
 <?php include "includes/media_form.php"; ?>
-
 		  </div>
-
-	 </div>
-		 <!-- /.row -->
-
-	</div>
-	<!-- /.container-fluid -->
-
+	 </div><!-- /.row -->
+	</div><!-- /.container-fluid -->
 </div>
-<?php include "includes/admin_footer.php"; ?>
-<!-- /#page-wrapper -->
+<?php include "includes/admin_footer.php"; ?><!-- /#page-wrapper -->

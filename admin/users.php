@@ -3,10 +3,8 @@
 <div id="wrapper">
 	<?php $users = User::read_all(); ?>
 <?php include "includes/admin_top_navigation.php"; ?>
-
 <div id="page-wrapper">
 	<div class="container-fluid">
-		 <!-- Page Heading -->
  <div class="row">
 	  <div class="col-lg-12">
 			<h1 class="page-header">Omnifoods &mdash; <small>User Manager</small></h1>
@@ -47,7 +45,6 @@
 							<td><?php echo $user->email; ?> </td>
 							<td><?php echo $user->role; ?></td>
 						</tr>
-
 					<?php endforeach; ?>
 
 				</tbody>
@@ -60,7 +57,6 @@
 		<hr>
 	</div>
 </div>
-
 <!--DYNAMIC DATA BEING PASSED TO DELETE.PHP-->
 <script>
 	$(document).ready(function(){
@@ -73,5 +69,3 @@
 	});
 </script>
 <?php include "includes/admin_footer.php"; ?>
-
-<!--	target delete model and delete record					-->

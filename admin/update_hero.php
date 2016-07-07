@@ -9,7 +9,6 @@
 	$hero = Hero::find_by_id($_GET['id']);
 	$saveLogo = $hero;
 ?>
-
 <div id="page-wrapper">
 	<div class="container-fluid">
 		 <!-- Page Heading -->
@@ -26,15 +25,7 @@ if(isset($_POST['submit'])) :
 	if($hero) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
 		if(!empty($_POST['brand_text']) && !empty($_POST['hero_text'])) :
-			$hero->brand_icon 			= trim($_POST['brand_icon']);
-			$hero->brand_text 			= trim($_POST['brand_text']);
-			$hero->hero_text 				= trim($_POST['hero_text']);
-			$hero->hero_subtext 			= trim($_POST['sub_text']);
-			$hero->display 				= trim($_POST['display']);
-			$hero->newsletter_text 		= trim($_POST['news_text']);
-
 			$hero->save_file_data($saveLogo);
-
 				if(empty($_FILES['logo'])) :
 				  	/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
 				  $hero->add_up_result = $hero->add_update("update");
@@ -45,7 +36,6 @@ if(isset($_POST['submit'])) :
 				  	  else:
 						$hero->save();
 						/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
-
 				  	  endif;
 				  $hero->add_up_result = $hero->add_update("update");
 				endif;
@@ -56,7 +46,6 @@ if(isset($_POST['submit'])) :
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
 				Hero::notifyMessage($session->message, "success");
 				echo "</div>";
-
 			else :
 				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE HERO SECTION";
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
@@ -70,11 +59,8 @@ endif;
 <?php include "includes/hero_form.php"; ?>
 			  </div>
 		 </div>
-<?php include "delete_media.php"; ?>
-		 <!-- /.row -->
-	</div>
-	<!-- /.container-fluid -->
-</div>
-<!-- /#page-wrapper -->
+<?php include "delete_media.php"; ?><!-- /.row -->
+	</div><!-- /.container-fluid -->
+</div><!-- /#page-wrapper -->
 </div>
 <?php include "includes/admin_footer.php"; ?>

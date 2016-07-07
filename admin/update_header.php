@@ -24,11 +24,6 @@ if(isset($_POST['submit'])) :
 	if($section) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
 		if(!empty($_POST['section_title'])) :
-			$section->section_icon 				= trim($_POST['section_icon']);
-			$section->section_title 			= trim($_POST['section_title']);
-			$section->section_description 	= trim($_POST['section_description']);
-			$section->display						= trim($_POST['display']);
-
 			$section->add_up_result = $section->add_update("update");
 /*TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
 			if($section->add_up_result) :
@@ -37,7 +32,6 @@ if(isset($_POST['submit'])) :
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
 				Section::notifyMessage($session->message, "success");
 				echo "</div>";
-
 			else :
 				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE SECTION HEADER";
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
@@ -51,11 +45,8 @@ endif;
 <?php include "includes/section_form.php"; ?>
 			  </div>
 		 </div>
-<?php include "delete_media.php"; ?>
-		 <!-- /.row -->
-	</div>
-	<!-- /.container-fluid -->
-</div>
-<!-- /#page-wrapper -->
+<?php include "delete_media.php"; ?><!-- /.row -->
+	</div><!-- /.container-fluid -->
+</div><!-- /#page-wrapper -->
 </div>
 <?php include "includes/admin_footer.php"; ?>

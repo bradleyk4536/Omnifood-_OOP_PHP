@@ -3,7 +3,6 @@
 <div id="wrapper">
 	<?php $roles = Role::read_all(); ?>
 <?php include "includes/admin_top_navigation.php"; ?>
-
 <div id="page-wrapper">
 	<div class="container-fluid">
 		 <!-- Page Heading -->
@@ -31,7 +30,6 @@
 							<td><?php echo $role->role_id; ?> </td>
 							<td><?php echo $role->role; ?>
 							<div class="action_link">
-<!--								<a href="update_user.php?id=<?php// echo $role->role_id ?>">Edit</a>-->
 							</div>
 							</td>
 							<td><?php echo $role->role_description; ?> </td>

@@ -32,21 +32,18 @@ public function add_update($control) {
 	case "update":
 			$result = static::update();
 			$this->user_id 	= $_GET['id'];
-
-
 			break;
 	default: return false;
 	endswitch;
 	if(!$this->email) {
 		return false;
 	} else {
-
-		$this->username 	= static::val_string($this->username);
-		$this->first_name = static::val_string($this->first_name);
-		$this->last_name 	= static::val_string($this->last_name);
-		$this->email 		= static::val_email($this->email);
-		$this->role 		= static::val_string($this->role);
-		$this->password 	= static::val_string($this->password);
+		$this->username 	= static::val_string(trim($_POST['username']));
+		$this->first_name = static::val_string(trim($_POST['first_name']));
+		$this->last_name 	= static::val_string(trim($_POST['last_name']));
+		$this->email 		= static::val_email(trim($_POST['email']));
+		$this->role 		= static::val_string(trim($_POST['role']));
+		$this->password 	= static::val_string(trim($_POST['password']));
 		$this->password 	= password_hash($this->password, PASSWORD_BCRYPT, array('cost => 12'));
 		$result->bindParam(':username', $this->username, PDO::PARAM_STR);
 		$result->bindParam(':first_name', $this->first_name, PDO::PARAM_STR);
@@ -59,19 +56,14 @@ public function add_update($control) {
 		return $result;
 	}
 }
-
-public static function check_user($username, $password) {
+public static function check_user() {
 	global $database;
-
-	$username = static::val_string($username);
-	$password = static::val_string($password);
-
-
+	$username = static::val_string(trim($_POST['username']));
+	$password = static::val_string(trim($_POST['password']));
 	$sql = $database->connection->prepare("SELECT * FROM users WHERE username=:username LIMIT 1");
 	$sql->bindParam(':username', $username);
 	$sql->execute();
 	$get_login_info = $sql->fetch(PDO::FETCH_OBJ);
-
 	if($get_login_info) :
 		$verify_password = password_verify($password, $get_login_info->password);
 		return $verify_password ? $get_login_info : false;

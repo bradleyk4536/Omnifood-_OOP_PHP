@@ -6,14 +6,16 @@ $sections = Section::read_all();
 <h3><a href="#"><strong><?php echo $section->section_title; ?></strong></a></h3>
 <?php endforeach; ?>
 	<div>
+<?php $count = Section::get_count(); ?>
+<?php if($count->rowCount() === 0) : ?>
 		<ol class="breadcrumb">
 			<li><i class="fa fa-indent"></i><a href="add_header.php"> Add Section Header</a></li>
 		</ol>
+<?php endif; ?>
 		<div class="col-md-12">
 	  	<table class="table table-condensed">
 			<thead>
 				<tr>
-<!--					<th>Icon</th>	-->
 					<th class="col-md-4">Title</th>
 					<th class="col-md-4">Description</th>
 					<th class="col-md-2">Display</th>
@@ -23,10 +25,6 @@ $sections = Section::read_all();
 			<tbody>
 <?php foreach( $sections as $section ) : ?>
 				<tr>
-<!--
-					<td><i class="<?php echo $section->section_icon; ?>"></i>
-					</td>
--->
 					<td><?php echo $section->section_title; ?></td>
 					<td><?php echo $section->section_description; ?></td>
 					<td><?php echo $section->display; ?></td>
@@ -36,14 +34,9 @@ $sections = Section::read_all();
 			</tbody>
 		</table>
 	  </div>
-
 	  <ol class="breadcrumb">
 			<li><i class="fa fa-indent"></i><a href="add_header.php"> Add Section Benefits</a></li>
 	  </ol>
-
-
-
-
 	  <div class="col-md-8 col-md-offset-2">
 	  	<table class="table table-condensed">
 			<thead>
@@ -55,24 +48,7 @@ $sections = Section::read_all();
 				</tr>
 			</thead>
 			<tbody>
-<?php
-Hero::getAll("SELECT * FROM hero ");
-$heros = Hero::read_all();
-?>
-<?php foreach( $heros as $hero ) : ?>
-				<tr>
-					<td><img class="admin-photo-thumbnail" src="media/<?php echo $hero->logo; ?>" alt="">
-					<div>
-					</div>
-					</td>
-					<td><?php echo $hero->hero_text; ?></td>
-					<td><?php echo $hero->display; ?></td>
-					<td><span><a class="btn btn-info btn-xs" href="update_hero.php?id=<?php echo $hero->hero_id; ?>">View</a></span></td>
-				</tr>
-<?php endforeach; ?>
 			</tbody>
 		</table>
 	  </div>
-
-
 	</div>
