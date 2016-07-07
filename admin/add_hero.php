@@ -1,4 +1,4 @@
-<?php include "includes/admin_header.php"; ?>
+<?php require_once "includes/admin_header.php"; ?>
 <?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
 <?php
@@ -26,7 +26,7 @@ if(isset($_POST['submit'])) :
 	endif;
 endif;
 ?>
-<?php include "includes/admin_top_navigation.php"; ?>
+<?php require_once "includes/admin_top_navigation.php"; ?>
 	<div id="page-wrapper">
 	<div class="container-fluid">
 		 <!-- Page Heading -->
@@ -47,9 +47,9 @@ endif;
 								<?php Hero::notifyMessage($session->message, "failure"); ?>
 							</div>
 					<?php endif; ?>
-<?php include "includes/hero_form.php"; ?>
+<?php require_once "includes/form_content/hero_form.php"; ?>
 		  </div>
 	 </div><!-- /.row -->
 	</div><!-- /.container-fluid -->
 </div>
-<?php include "includes/admin_footer.php"; ?><!-- /#page-wrapper -->
+<?php require_once "includes/admin_footer.php"; ?><!-- /#page-wrapper -->

@@ -38,7 +38,7 @@ public static function find_by_id($id) {
 		global $database;
 		$get_id = $superGlobal;
 		$result = $database->connection->prepare( static::$delete_sql );
-		if ($result) { $execute = $result->execute(['id' => $get_id ]); } else { $execute = false; }
+		if ($result) : $execute = $result->execute(['id' => $get_id ]);  else : $execute = false; endif;
 		return $execute;
 	}
 
@@ -60,7 +60,7 @@ public static function find_by_id($id) {
 /* SANITIZE STRING - RETURNS FILTERED DATA ON SUCCESS OR FALSE ON FAILURES */
 
 	public static function val_string($input_field) {
-		$sanitize = filter_var($input_field, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+		$sanitize = filter_var(trim($input_field), FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 		return $sanitize;
 	}
 
@@ -68,7 +68,7 @@ public static function find_by_id($id) {
 
 	public static function val_int($input_field) {
 
-			$sanitize = filter_var($input_field, FILTER_SANITIZE_NUMBER_INT);
+			$sanitize = filter_var(trim($input_field), FILTER_SANITIZE_NUMBER_INT);
 
 			if(!$result = filter_var($sanitize, FILTER_VALIDATE_INT)) :
 				return $result;
@@ -82,7 +82,7 @@ public static function find_by_id($id) {
 
 	public static function val_email($input_field) {
 
-			$sanitize = filter_var($input_field, FILTER_SANITIZE_EMAIL);
+			$sanitize = filter_var(trim($input_field), FILTER_SANITIZE_EMAIL);
 
 			if($result = filter_var($sanitize, FILTER_VALIDATE_EMAIL)) :
 				return $result;

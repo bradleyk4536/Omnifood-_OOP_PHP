@@ -29,20 +29,20 @@
 
 			case "update":
 				$result = static::update();
-				$this->section_id = $_GET['id'];
+				$this->section_id = static::val_int($_GET['id']);
 
 			break;
 		endswitch;
-		$this->section_icon 		 		= static::val_string(trim($_POST['section_icon']));
-		$this->section_title 		 	= static::val_string(trim($_POST['section_title']));
-		$this->section_description 	= static::val_string(trim($_POST['section_description']));
-		$this->display 					= static::val_string(trim($_POST['display']));
+		$this->section_icon 		 		= static::val_string($_POST['section_icon']);
+		$this->section_title 		 	= static::val_string($_POST['section_title']);
+		$this->section_description 	= static::val_string($_POST['section_description']);
+		$this->display 					= static::val_string($_POST['display']);
 		$result->bindParam(':icon', $this->section_icon, PDO::PARAM_STR);
 		$result->bindParam(':title', $this->section_title, PDO::PARAM_STR);
 		$result->bindParam(':description', $this->section_description, PDO::PARAM_STR);
 		if($control === "add") {$result->bindParam(':section_name', static::$setSection, PDO::PARAM_STR);}
 		$result->bindParam(':display', $this->display, PDO::PARAM_STR);
-		if($control === "update") { $result->bindParam(':id', $this->section_id, PDO::PARAM_INT); }
+		if($control === "update") : $result->bindParam(':id', $this->section_id, PDO::PARAM_INT); endif;
 
 		return $result;
 

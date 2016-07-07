@@ -1,17 +1,7 @@
-<?php
-Section::getAll("section2");
-$sections = Section::read_all();
-?>
-<?php foreach( $sections as $section ) : ?>
-<h3><a href="#"><strong><?php echo $section->section_title; ?></strong></a></h3>
-<?php endforeach; ?>
-	<div>
-<?php $count = Section::get_count(); ?>
-<?php if($count->rowCount() === 0) : ?>
+<div>
 		<ol class="breadcrumb">
 			<li><i class="fa fa-indent"></i><a href="add_header.php"> Add Section Header</a></li>
 		</ol>
-<?php endif; ?>
 		<div class="col-md-12">
 	  	<table class="table table-condensed">
 			<thead>
@@ -51,4 +41,4 @@ $sections = Section::read_all();
 			</tbody>
 		</table>
 	  </div>
-	</div>
+</div>

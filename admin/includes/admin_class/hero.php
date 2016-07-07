@@ -40,13 +40,13 @@
 
 			break;
 		endswitch;
-		$this->brand_icon 		 = static::val_string(trim($_POST['brand_icon']));
-		$this->brand_text 		 = static::val_string(trim($_POST['brand_text']));
+		$this->brand_icon 		 = static::val_string($_POST['brand_icon']);
+		$this->brand_text 		 = static::val_string($_POST['brand_text']);
 		$this->logo 				 = static::val_string($this->filename);
-		$this->newsletter_text 	 = static::val_string(trim($_POST['news_text']));
-		$this->hero_text 			 = static::val_string(trim($_POST['hero_text']));
-		$this->hero_subtext    	 = static::val_string(trim($_POST['sub_text']));
-		$this->display 			 = static::val_string(trim($_POST['display']));
+		$this->newsletter_text 	 = static::val_string($_POST['news_text']);
+		$this->hero_text 			 = static::val_string($_POST['hero_text']);
+		$this->hero_subtext    	 = static::val_string($_POST['sub_text']);
+		$this->display 			 = static::val_string($_POST['display']);
 		$result->bindParam(':brand_icon', $this->brand_icon, PDO::PARAM_STR);
 		$result->bindParam(':brand_text', $this->brand_text, PDO::PARAM_STR);
 		$result->bindParam(':logo', $this->filename, PDO::PARAM_STR);

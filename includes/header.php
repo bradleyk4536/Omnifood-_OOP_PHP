@@ -1,4 +1,4 @@
-<?php require_once "admin/includes/init.php"; ?>
+<?php require_once "admin/includes/database/init.php"; ?>
 <?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">

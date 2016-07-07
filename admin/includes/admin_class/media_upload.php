@@ -145,15 +145,15 @@
 
 			break;
 		endswitch;
-		$this->caption 		 = static::val_string(trim($_POST['caption']));
-		$this->alternate_text = static::val_string(trim($_POST['alternate_text']));
+		$this->caption 		 = static::val_string($_POST['caption']);
+		$this->alternate_text = static::val_string($_POST['alternate_text']);
 
 		$result->bindParam(':caption', $this->caption, PDO::PARAM_STR);
 		$result->bindParam(':filename', $this->filename, PDO::PARAM_STR);
 		$result->bindParam('alternate_text', $this->alternate_text, PDO::PARAM_STR);
 		$result->bindParam(':type', $this->type, PDO::PARAM_STR);
 		$result->bindParam(':size', $this->size, PDO::PARAM_INT);
-		if($control === "update") { $result->bindParam(':id', $this->image_id, PDO::PARAM_INT); }
+		if($control === "update") : $result->bindParam(':id', $this->image_id, PDO::PARAM_INT); endif;
 
 		return $result;
 

@@ -1,4 +1,4 @@
-<?php include "includes/admin_header.php"; ?>
+<?php require_once "includes/admin_header.php"; ?>
 <?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
 <?php include "includes/admin_top_navigation.php"; ?>
@@ -42,11 +42,11 @@ if(isset($_POST['submit'])) :
 	endif;
 endif;
 ?>
-<?php include "includes/user_form.php"; ?>
+<?php include "includes/form_content/user_form.php"; ?>
 				<small>*Note: Password is required for all changes.</small>
 			  </div>
 		 </div><!-- /.row -->
 	</div><!-- /.container-fluid -->
 </div><!-- /#page-wrapper -->
 </div>
-<?php include "includes/admin_footer.php"; ?>
+<?php require_once "includes/admin_footer.php"; ?>

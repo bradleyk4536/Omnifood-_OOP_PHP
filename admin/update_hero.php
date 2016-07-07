@@ -1,7 +1,7 @@
-<?php include "includes/admin_header.php"; ?>
+<?php require_once "includes/admin_header.php"; ?>
 <?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
-<?php include "includes/admin_top_navigation.php"; ?>
+<?php require_once "includes/admin_top_navigation.php"; ?>
 <?php
 	if(empty($_GET['id'])) :
 		redirect_to("index.php");
@@ -56,11 +56,11 @@ if(isset($_POST['submit'])) :
 	endif;
 endif;
 ?>
-<?php include "includes/hero_form.php"; ?>
+<?php require_once "includes/form_content/hero_form.php"; ?>
 			  </div>
 		 </div>
-<?php include "delete_media.php"; ?><!-- /.row -->
+<?php require_once "delete_media.php"; ?><!-- /.row -->
 	</div><!-- /.container-fluid -->
 </div><!-- /#page-wrapper -->
 </div>
-<?php include "includes/admin_footer.php"; ?>
+<?php require_once "includes/admin_footer.php"; ?>

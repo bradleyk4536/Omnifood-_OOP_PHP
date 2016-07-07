@@ -1,4 +1,4 @@
-<?php include "init.php"; ?>
+<?php require_once "database/init.php"; ?>
 <?php
 	$session->logout();
 	header("Location: ../index.php");

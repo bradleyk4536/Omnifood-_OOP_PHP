@@ -1,7 +1,7 @@
-<?php include "includes/admin_header.php"; ?>
+<?php require_once "includes/admin_header.php"; ?>
 <?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
-<?php include "includes/admin_top_navigation.php"; ?>
+<?php require_once "includes/admin_top_navigation.php"; ?>
 <?php
 $role = Role::get_user_role();
 $user = new User();
@@ -42,7 +42,7 @@ endif;
 				<?php User::notifyMessage($session->message, "failure"); ?>
 			</div>
 			<?php endif; ?>
-				<?php include "includes/user_form.php"; ?>
+				<?php require_once "includes/form_content/user_form.php"; ?>
 		  </div>
 	 </div><!-- /.row -->
 	</div><!-- /.container-fluid -->

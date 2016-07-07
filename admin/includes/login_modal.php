@@ -1,4 +1,4 @@
-<?php include "init.php"; ?>
+<?php require_once "database/init.php"; ?>
 <?php
 	if(isset($_POST['submit'])) :
 		if(!empty($_POST['username']) && !empty($_POST['password']) ) :

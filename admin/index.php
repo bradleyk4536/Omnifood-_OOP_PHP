@@ -1,7 +1,7 @@
-<?php include "includes/admin_header.php"; ?>
+<?php require_once "includes/admin_header.php"; ?>
 <?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
  <div id="wrapper">
-	<?php include "includes/admin_top_navigation.php"; ?>
+	<?php require_once "includes/admin_top_navigation.php"; ?>
 	<?php $sections = Section::read_all(); ?>
   <div id="page-wrapper">
 		<div class="container-fluid">
@@ -21,82 +21,14 @@
 			 </div><!-- /.row -->
 		</div><!-- /.container-fluid -->
 <div id="accordion">
-<?php include "includes/hero_accordion.php"; ?>
-<?php include "includes/get_food_accordion.php"; ?>
-		<h3><a href="#"><strong>How It Works &mdash; Simple As 1, 2, 3</strong></a></h3>
-		<div>
-			<ol class="breadcrumb">
-				<li><i class="fa fa-indent"></i><a href="add_section.php"> Add Section</a></li>
-			</ol>
-		  <hr>
-			<table class="table table-condensed">
-				<thead>
-					<tr>
-						<th>Logo Image</th>
-						<th>Tag Line</th>
-						<th>Display</th>
-					</tr>
-				</thead>
-				<tbody></tbody>
-			</table>
-			 <span><a href="update_hero.php?id=11">View</a></span>
-		</div>
-		<h3><a href="#"><strong>Were Currently In These Cities</strong></a></h3>
-		<div>
-			<ol class="breadcrumb">
-				<li><i class="fa fa-indent"></i><a href="add_section.php"> Add Section</a></li>
-			</ol>
-		  <hr>
-			<table class="table table-condensed">
-				<thead>
-					<tr>
-						<th>Logo Image</th>
-						<th>Tag Line</th>
-						<th>Display</th>
-					</tr>
-				</thead>
-				<tbody></tbody>
-			</table>
-			 <span><a href="update_hero.php?id=11">View</a></span>
-		</div>
-		<h3><a href="#"><strong>Our Customers Can't Live Without Us</strong></a></h3>
-		<div>
-			<ol class="breadcrumb">
-				<li><i class="fa fa-indent"></i><a href="add_section.php"> Add Section</a></li>
-			</ol>
-		  <hr>
-			<table class="table table-condensed">
-				<thead>
-					<tr>
-						<th>Logo Image</th>
-						<th>Tag Line</th>
-						<th>Display</th>
-					</tr>
-				</thead>
-				<tbody></tbody>
-			</table>
-			 <span><a href="update_hero.php?id=11">View</a></span>
-		</div>
-		<h3><a href="#"><strong>Start Eating Healthy Today</strong></a></h3>
-		<div>
-			<ol class="breadcrumb">
-				<li><i class="fa fa-indent"></i><a href="add_section.php"> Add Section</a></li>
-			</ol>
-		  <hr>
-			<table class="table table-condensed">
-				<thead>
-					<tr>
-						<th>Logo Image</th>
-						<th>Tag Line</th>
-						<th>Display</th>
-					</tr>
-				</thead>
-				<tbody></tbody>
-			</table>
-			 <span><a href="update_hero.php?id=11">View</a></span>
-		</div>
+<?php require_once "includes/index_accordion/hero_accordion.php"; ?>
+<?php require_once "includes/index_accordion/section2_accordion.php"; ?>
+<?php require_once "includes/index_accordion/section3_accordion.php"; ?>
+
+
+
 </div>
   </div><!-- /#page-wrapper -->
 </div>
     <!-- /#wrapper -->
-<?php include "includes/admin_footer.php"; ?>
+<?php require_once "includes/admin_footer.php"; ?>

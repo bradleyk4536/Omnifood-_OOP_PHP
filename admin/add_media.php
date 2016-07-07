@@ -1,4 +1,4 @@
-<?php include "includes/admin_header.php"; ?>
+<?php require_once "includes/admin_header.php"; ?>
 <?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
 <?php
@@ -47,9 +47,9 @@ endif;
 								<?php Media::notifyMessage($session->message, "failure"); ?>
 							</div>
 					<?php endif; ?>
-<?php include "includes/media_form.php"; ?>
+<?php require_once "includes/form_content/media_form.php"; ?>
 		  </div>
 	 </div><!-- /.row -->
 	</div><!-- /.container-fluid -->
 </div>
-<?php include "includes/admin_footer.php"; ?><!-- /#page-wrapper -->
+<?php require_once "includes/admin_footer.php"; ?><!-- /#page-wrapper -->
