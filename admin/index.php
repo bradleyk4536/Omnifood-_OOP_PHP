@@ -24,11 +24,10 @@
 <?php require_once "includes/index_accordion/hero_accordion.php"; ?>
 <?php require_once "includes/index_accordion/section2_accordion.php"; ?>
 <?php require_once "includes/index_accordion/section3_accordion.php"; ?>
-
-
-
+<?php require_once "includes/index_accordion/section4_accordion.php"; ?>
+<?php require_once "includes/index_accordion/section5_accordion.php"; ?>
+<?php require_once "includes/index_accordion/section6_accordion.php"; ?>
 </div>
   </div><!-- /#page-wrapper -->
-</div>
-    <!-- /#wrapper -->
+</div><!-- /#wrapper -->
 <?php require_once "includes/admin_footer.php"; ?>

@@ -9,7 +9,6 @@
 
 		protected static $find_by_id_sql = "SELECT * FROM section WHERE section_id = :id ";
 
-		protected static $setSection;
 
 		public $section_id;
 		public $section_icon;
@@ -17,8 +16,7 @@
 		public $section_description;
 		public $display = "false";
 		public $add_up_result;
-
-		public static function setSection($section) { static::$setSection = $section; }
+		public $setSection;
 
 		public function add_update($control) {
 		global $filename;
@@ -37,10 +35,11 @@
 		$this->section_title 		 	= static::val_string($_POST['section_title']);
 		$this->section_description 	= static::val_string($_POST['section_description']);
 		$this->display 					= static::val_string($_POST['display']);
+		$this->setSection					= static::val_string($_POST['section']);
 		$result->bindParam(':icon', $this->section_icon, PDO::PARAM_STR);
 		$result->bindParam(':title', $this->section_title, PDO::PARAM_STR);
 		$result->bindParam(':description', $this->section_description, PDO::PARAM_STR);
-		if($control === "add") {$result->bindParam(':section_name', static::$setSection, PDO::PARAM_STR);}
+		if($control === "add") {$result->bindParam(':section_name', $this->setSection, PDO::PARAM_STR);}
 		$result->bindParam(':display', $this->display, PDO::PARAM_STR);
 		if($control === "update") : $result->bindParam(':id', $this->section_id, PDO::PARAM_INT); endif;
 

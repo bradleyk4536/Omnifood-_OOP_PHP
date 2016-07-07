@@ -22,11 +22,26 @@
 <div class="inside">
 <div class="box-inner">
 	<p class="text">
-	  <span class="ion-ios-monitor-outline"></span> Display this Section on site
+	  <span class="ion-ios-monitor-outline"></span> &nbsp;Display this header on home page
 	 </p>
 	 <div class="form-group">
 	 	 <input type="radio" name="display" value="true" <?php if(isset($section->display) && $section->display === "true") echo 'checked'?>> Yes <br>
 	 	 <input type="radio" name="display" value="false" <?php if(isset($section->display) && $section->display === "false") echo 'checked'; ?>>No
+	 </div>
+	 <p class="text">
+	 	<span class="fa fa-indent"></span> &nbsp;Add section header to:
+	 </p>
+	 <div class="form-group">
+	 	<select name="section" id="" class="form-control">
+	 	<?php if( isset($section->section_name )) : ?>
+	 		<option value="<?php echo $section->section_name; ?>"><?php echo $section->section_name; ?></option>
+	 	<?php endif; ?>
+	 		<option value="Section 2">Section 2</option>
+	 		<option value="Section 3">Section 3</option>
+	 		<option value="Section 4">Section 4</option>
+	 		<option value="Section 5">Section 5</option>
+	 		<option value="Section 6">Section 6</option>
+	 	</select>
 	 </div>
 
 	<div class="info-box-footer clearfix">

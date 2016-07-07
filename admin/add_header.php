@@ -2,7 +2,6 @@
 <?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
 <?php
-Section::setSection("section2");
 $section = new Section();
 if(isset($_POST['submit'])) :
 	if($section) :
@@ -26,10 +25,10 @@ endif;
 	<div class="container-fluid">
 	 <div class="row">
 		  <div class="col-lg-12">
-				<h1 class="page-header">Omnifoods &mdash; <small>Add Section</small> </h1>
+				<h1 class="page-header">Omnifoods &mdash; <small>Add Section Header</small> </h1>
 				<ol class="breadcrumb">
 				 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Site Manager</a></li>
-				 <li><i class="fa fa-indent"></i>&emsp;<a href="add_section.php">Add Section</a></li>
+				 <li><i class="fa fa-indent"></i>&emsp;<a href="add_section.php">Add Section Header</a></li>
 				 <li><i class="ion-ios-camera"></i>&emsp;<a href="../index.php">View Site</a></li>
 				</ol>
 					<?php if($section->add_up_result && isset($session->message)) : ?>
