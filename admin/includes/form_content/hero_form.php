@@ -12,7 +12,6 @@
 	</div>
 </div>
 	<div class="col-md-8">
-
 		<div class="form-group">
 		<label for="logo_image">Logo Image</label>
 		<a class="thumbnail" href="#">

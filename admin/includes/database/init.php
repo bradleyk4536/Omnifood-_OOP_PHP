@@ -12,7 +12,7 @@
 	require_once(INCLUDES_PATH.DS."admin_class/role.php");
 	require_once(INCLUDES_PATH.DS."admin_class/hero.php");
 	require_once(INCLUDES_PATH.DS."admin_class/section.php");
-
+	require_once(INCLUDES_PATH.DS."admin_class/benefits.php");
 //	require_once(INCLUDES_PATH.DS."comment.php");
 	require_once(INCLUDES_PATH.DS."admin_class/session.php");
 //	require_once(INCLUDES_PATH.DS."paginate.php");

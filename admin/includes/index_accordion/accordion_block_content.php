@@ -15,8 +15,8 @@
 			<tbody>
 <?php foreach( $sections as $section ) : ?>
 				<tr>
-					<td><?php echo $section->section_title; ?></td>
-					<td><?php echo $section->section_description; ?></td>
+					<td><?php echo $section->title; ?></td>
+					<td><?php echo $section->description; ?></td>
 					<td><?php echo $section->display; ?></td>
 					<td><span><a class="btn btn-info btn-xs" href="update_header.php?id=<?php echo $section->section_id; ?>">View</a></span></td>
 				</tr>
@@ -25,7 +25,7 @@
 		</table>
 	  </div>
 	  <ol class="breadcrumb">
-			<li><i class="fa fa-indent"></i><a href="add_header.php"> Add Section Benefits</a></li>
+			<li><i class="fa fa-indent"></i><a href="add_block_benefits.php"> Add Benefits</a></li>
 	  </ol>
 	  <div class="col-md-8 col-md-offset-2">
 	  	<table class="table table-condensed">

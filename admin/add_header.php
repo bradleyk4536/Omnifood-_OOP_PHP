@@ -6,7 +6,7 @@ $section = new Section();
 if(isset($_POST['submit'])) :
 	if($section) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
-		if(!empty($_POST['section_title'])) :
+		if(!empty($_POST['title'])) :
 /* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
 				$section->add_up_result = $section->add_update("add");
 	/*	TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */

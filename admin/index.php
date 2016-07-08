@@ -22,7 +22,7 @@
 		</div><!-- /.container-fluid -->
 <div id="accordion">
 <?php require_once "includes/index_accordion/hero_accordion.php"; ?>
-<?php require_once "includes/index_accordion/section2_accordion.php"; ?>
+<?php require_once "includes/index_accordion/getFood_accordion.php"; ?>
 <?php require_once "includes/index_accordion/section3_accordion.php"; ?>
 <?php require_once "includes/index_accordion/section4_accordion.php"; ?>
 <?php require_once "includes/index_accordion/section5_accordion.php"; ?>

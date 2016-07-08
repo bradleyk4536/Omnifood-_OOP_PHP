@@ -23,7 +23,7 @@ if(isset($_POST['submit'])) :
 	$section = new Section;
 	if($section) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
-		if(!empty($_POST['section_title'])) :
+		if(!empty($_POST['title'])) :
 			$section->add_up_result = $section->add_update("update");
 /*TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
 			if($section->add_up_result) :

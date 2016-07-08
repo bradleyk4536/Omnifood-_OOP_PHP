@@ -1,6 +1,6 @@
 <?php
-Section::getAll("Section 6");
+Section::getAll("Start Eating Healthy");
 $sections = Section::read_all();
 ?>
-<h3><a href="#"><strong>Section 6</strong></a></h3>
-<?php include "accordion_header_content.php"; ?>
+<h3><a href="#"><strong>Start Eating Healthy</strong></a></h3>
+
