@@ -92,7 +92,7 @@ public static function find_by_id($id) {
 	}
 
 	/* DISPLAY ALL TABLE ENTRIES FROM ACCORDION */
-	public static function getHero($sql) { static::val_string(static::$find_all_sql = $sql); }
+	public static function getAccordion($sql) { static::val_string(static::$find_all_sql = $sql); }
 
 	public static function getAll($sql) {
 		$statement = "SELECT * FROM section WHERE section_name = '{$sql}' ";
