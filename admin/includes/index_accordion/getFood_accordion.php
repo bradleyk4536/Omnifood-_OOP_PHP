@@ -9,7 +9,7 @@ $benefits = Block::read_all();
 		<ol class="breadcrumb">
 			<li><i class="fa fa-indent"></i><a href="add_header.php?header=get_food"> Add Section Header</a></li>
 		</ol>
-<?php include "accordion_header_content.php"; ?>
+	<section><?php include "accordion_header_content.php"; ?></section>
 		<ol class="breadcrumb">
 			<li><i class="fa fa-indent"></i><a href="add_block_benefits.php?block=get_food"> Add Benefits</a></li>
 	  </ol>

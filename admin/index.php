@@ -25,7 +25,7 @@
 <?php require_once "includes/index_accordion/getFood_accordion.php"; ?>
 <?php require_once "includes/index_accordion/section3_accordion.php"; ?>
 <?php require_once "includes/index_accordion/section4_accordion.php"; ?>
-<?php require_once "includes/index_accordion/section5_accordion.php"; ?>
+<?php require_once "includes/index_accordion/testimonial_accordion.php"; ?>
 <?php require_once "includes/index_accordion/section6_accordion.php"; ?>
 </div>
   </div><!-- /#page-wrapper -->
