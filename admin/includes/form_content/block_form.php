@@ -28,22 +28,6 @@
 	 	 <input type="radio" name="display" value="true" <?php if(isset($block->display) && $block->display === "true") echo 'checked'?>> Yes <br>
 	 	 <input type="radio" name="display" value="false" <?php if(isset($block->display) && $block->display === "false") echo 'checked'; ?>>No
 	 </div>
-	 <p class="text">
-	 	<span class="fa fa-indent"></span> &nbsp;Add section header to:
-	 </p>
-	 <div class="form-group">
-	 	<select name="section" id="" class="form-control">
-	 	<?php if( isset($block->section_name )) : ?>
-	 		<option value="<?php echo $block->section_name; ?>"><?php echo $block->section_name; ?></option>
-	 	<?php endif; ?>
-	 		<option value="Get Food Fast">Get Food Fast</option>
-	 		<option value="How It Works">How It Works</option>
-	 		<option value="Cities">Cities</option>
-	 		<option value="Testimonial">Testimonial</option>
-	 		<option value="Start Eating Healthy">Start Eating Healthy</option>
-	 	</select>
-	 </div>
-
 	<div class="info-box-footer clearfix">
   <div class="info-box-update pull-right ">
 		<input type="submit" name="submit" value="Update" class="btn btn-primary btn-lg ">
