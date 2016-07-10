@@ -23,7 +23,7 @@
 <div id="accordion">
 <?php require_once "includes/index_accordion/hero_accordion.php"; ?>
 <?php require_once "includes/index_accordion/getFood_accordion.php"; ?>
-<?php require_once "includes/index_accordion/section3_accordion.php"; ?>
+<?php require_once "includes/index_accordion/how_works_accordion.php"; ?>
 <?php require_once "includes/index_accordion/section4_accordion.php"; ?>
 <?php require_once "includes/index_accordion/testimonial_accordion.php"; ?>
 <?php require_once "includes/index_accordion/section6_accordion.php"; ?>

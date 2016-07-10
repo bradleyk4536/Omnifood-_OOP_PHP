@@ -2,25 +2,25 @@
 <?php if(!$session->is_signed_in()) { header("Location: ../index.php"); } ?>
 <div id="wrapper">
 <?php
-$testimonial = new Testimonial();
+$how_works = new Works();
 if(isset($_POST['submit'])) :
-	if($testimonial) :
+	if($how_works) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
-		if(!empty($_POST['testimonial'])) :
-			$testimonial->image = $testimonial->set_file($_FILES['testimonial']);
-			if(!$testimonial->image) :
+		if(!empty($_POST['instruction'])) :
+			$how_works->image = $how_works->set_file($_FILES['how_works']);
+			if(!$how_works->image) :
 				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD <br> LOGO IMAGE"; //. $media->file_errors;
 			else:
-				$testimonial->save();
+				$how_works->save();
 			endif;
 /* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
-				$testimonial->add_up_result = $testimonial->add_update("add");
+				$how_works->add_up_result = $how_works->add_update("add");
 	/*	TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
-				if($testimonial->add_up_result) :
-					$testimonial->add_up_result->execute();
-					$session->message = "<i class='ion-happy-outline'></i> SUCCESS &mdash; NEW TESTIMONIAL ADDED <br>";
+				if($how_works->add_up_result) :
+					$how_works->add_up_result->execute();
+					$session->message = "<i class='ion-happy-outline'></i> SUCCESS &mdash; NEW INSTRUCTION ADDED";
 				else :
-						$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD NEW TESTIMONIAL <br>" . $testimonial->file_errors;
+						$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD NEW TESTIMONIAL <br>" . $how_works->file_errors;
 				endif;
 		endif;
 	endif;
@@ -31,23 +31,23 @@ endif;
 	<div class="container-fluid">
 	 <div class="row">
 		  <div class="col-lg-12">
-				<h1 class="page-header">Omnifoods &mdash; <small>Add Testimonial</small> </h1>
+				<h1 class="page-header">Omnifoods &mdash; <small>Add Instruction</small> </h1>
 				<ol class="breadcrumb">
 				 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Site Manager</a></li>
-				 <li><i class="fa fa-indent"></i>&emsp;<a href="add_testimonial.php?section=testimonial">Add Testimonial</a></li>
+				 <li><i class="fa fa-indent"></i>&emsp;<a href="add_how_works.php?section=how_works">Add How Works</a></li>
 				 <li><i class="ion-ios-camera"></i>&emsp;<a href="../index.php">View Site</a></li>
 				</ol>
-					<?php if($testimonial->add_up_result && isset($session->message)) : ?>
+					<?php if($how_works->add_up_result && isset($session->message)) : ?>
 							<div class="col-sm-6 col-sm-offset-3">
-								<?php Testimonial::notifyMessage($session->message, "success"); ?>
+								<?php Works::notifyMessage($session->message, "success"); ?>
 							</div>
 							<?php endif; ?>
-							<?php if(($testimonial->add_up_result === false) && isset($session->message)) : ?>
+							<?php if(($how_works->add_up_result === false) && isset($session->message)) : ?>
 							<div class="col-sm-6 col-sm-offset-3">
-								<?php Testimonial::notifyMessage($session->message, "failure"); ?>
+								<?php Works::notifyMessage($session->message, "failure"); ?>
 							</div>
 					<?php endif; ?>
-<?php require_once "includes/form_content/testimonial_form.php"; ?>
+<?php require_once "includes/form_content/how_works_form.php"; ?>
 		  </div>
 	 </div><!-- /.row -->
 	</div><!-- /.container-fluid -->

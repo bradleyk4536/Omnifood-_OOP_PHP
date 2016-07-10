@@ -1,11 +1,11 @@
 <?php
 class Testimonial extends Media {
 
-	protected static $find_all_sql = "SELECT * FROM testimonial WHERE display = 'true' ";
+	//protected static $find_all_sql	= "SELECT * FROM testimonial WHERE display = 'true' ";
 
-	protected static $create_sql = "INSERT INTO testimonial(testimonial, display, section_name, image, author) VALUES (:testimonial, :display, :section_name, :image, :author) ";
+	protected static $create_sql 		= "INSERT INTO testimonial(testimonial, display, section_name, image, author) VALUES (:testimonial, :display, :section_name, :image, :author) ";
 
-	protected static $update_sql = "UPDATE testimonial SET testimonial=:testimonial, display=:display, image=:image, author=:author WHERE testimonial_id = :id ";
+	protected static $update_sql 		= "UPDATE testimonial SET testimonial=:testimonial, display=:display, image=:image, author=:author WHERE testimonial_id = :id ";
 
 	protected static $find_by_id_sql = "SELECT * FROM testimonial WHERE testimonial_id = :id LIMIT 1";
 
