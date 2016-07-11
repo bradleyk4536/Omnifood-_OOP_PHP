@@ -16,7 +16,7 @@
 			</thead>
 			<tbody>
 <?php
-Hero::getAccordion("SELECT * FROM hero ");
+Hero::read_all();
 $heros = Hero::read_all();
 ?>
 <?php foreach( $heros as $hero ) : ?>

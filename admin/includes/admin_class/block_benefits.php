@@ -1,7 +1,7 @@
 <?php
 class Block extends Db_Crud {
 
-	protected static $find_all_sql = "SELECT * FROM block_benefits WHERE display = 'true' ";
+	protected static $find_all_sql = "SELECT * FROM block_benefits WHERE section_name = 'get_food' ";
 
 	protected static $create_sql = "INSERT INTO block_benefits(icon, title, description, display, section_name) VALUES (:icon, :title, :description, :display, :section_name) ";
 

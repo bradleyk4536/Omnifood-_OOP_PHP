@@ -91,10 +91,8 @@ public static function find_by_id($id) {
 			endif;
 	}
 
-	/* DISPLAY ALL TABLE ENTRIES FROM ACCORDION */
-	public static function getAccordion($sql) { static::val_string(static::$find_all_sql = $sql); }
-
-	public static function getAll($sql) {
+/* GET HEADER FROM SECTION TABLE BASED ON SECTION_NAME */
+	public static function get_header($sql) {
 		$statement = "SELECT * FROM section WHERE section_name = '{$sql}' ";
 		static::val_string(static::$find_all_sql = $statement);
 	}

@@ -1,6 +1,6 @@
 <?php
 	class Hero extends Media {
-		protected static $find_all_sql = "SELECT * FROM hero WHERE display = 'true' ";
+		protected static $find_all_sql = "SELECT * FROM hero ";
 
 		protected static $create_sql = "INSERT INTO hero(brand_icon, brand_text, logo, newsletter_text, hero_text, hero_subtext, display) VALUES (:brand_icon, :brand_text, :logo, :newsletter_text, :hero_text, :hero_subtext, :display) ";
 

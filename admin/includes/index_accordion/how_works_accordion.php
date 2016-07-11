@@ -1,6 +1,7 @@
 <?php
-Section::getAll("how_works");
+Section::get_header("how_works");
 $sections = Section::read_all();
+$how_works = Works::read_all();
 ?>
 <h3><a href="#"><strong>How It Works</strong></a></h3>
 <div>
@@ -9,7 +10,7 @@ $sections = Section::read_all();
 		</ol>
 	<section><?php include "accordion_header_content.php"; ?></section>
 		<ol class="breadcrumb">
-			<li><i class="fa fa-indent"></i><a href="add_how_works.php?section=how_works"> Add Benefits</a></li>
+			<li><i class="fa fa-indent"></i><a href="add_how_works.php?section=how_works"> Add Instructions</a></li>
 	  </ol>
-
+<?php include "accordion_how_works_content.php"; ?>
 </div>

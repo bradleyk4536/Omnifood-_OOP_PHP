@@ -1,7 +1,6 @@
 <?php
-Section::getAll("get_food");
+Section::get_header("get_food");
 $sections = Section::read_all();
-Block::getAccordion("SELECT * FROM block_benefits WHERE section_name = 'get_food' ");
 $benefits = Block::read_all();
 ?>
 <h3><a href="#"><strong>Get Food Fast</strong></a></h3>

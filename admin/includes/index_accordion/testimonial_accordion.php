@@ -1,7 +1,6 @@
 <?php
-Section::getAll("testimonial");
+Section::get_header("testimonial");
 $sections = Section::read_all();
-Testimonial::getAccordion("SELECT * FROM testimonial WHERE section_name = 'testimonial' ");
 $testimonials = Testimonial::read_All();
 ?>
 <h3><a href="#"><strong>Testimonial</strong></a></h3>

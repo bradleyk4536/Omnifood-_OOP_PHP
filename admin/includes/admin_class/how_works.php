@@ -2,8 +2,12 @@
 	class Works extends Media {
 
 		//protected static $find_all_sql 	= "SELECT * FROM how_works WHERE display = 'true' ";
+		protected static $find_all_sql 	= "SELECT * FROM how_works WHERE section_name = 'how_works' ";
+
 		protected static $create_sql = "INSERT INTO how_works(instruction, image, section_name, display) VALUES (:instruction, :image, :section_name, :display) ";
+
 		protected static $update_sql = "UPDATE how_works SET instruction=:instruction, image=:image, display=:display WHERE how_id = :id ";
+
 		protected static $find_by_id_sql = "SELECT * FROM how_works WHERE how_id = :id LIMIT 1";
 
 		public $how_id;
@@ -12,6 +16,13 @@
 		public $section_name;
 		public $display;
 		public $add_up_result;
+
+				/*	CAPTURE IMAGE FILE DATA IF NOT CHANGED DURING UPDATE OVERRIDE*/
+	public function save_file_data($fileData) {
+		if(!empty($fileData)) :
+			$this->filename = $fileData->image;
+		endif;
+	}
 
 	public function add_update($control) {
 		global $filename;

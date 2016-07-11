@@ -1,4 +1,4 @@
-<?php $heros = Hero::read_all(); ?>
+<?php $heros = Populate::hero_section(); ?>
 <section id="hero" data-type="background" data-speed="5">
 	<div class="container clear-fix">
 		<div class="row">

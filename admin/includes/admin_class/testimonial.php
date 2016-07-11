@@ -1,7 +1,7 @@
 <?php
 class Testimonial extends Media {
 
-	//protected static $find_all_sql	= "SELECT * FROM testimonial WHERE display = 'true' ";
+	protected static $find_all_sql	= "SELECT * FROM testimonial WHERE section_name = 'testimonial' ";
 
 	protected static $create_sql 		= "INSERT INTO testimonial(testimonial, display, section_name, image, author) VALUES (:testimonial, :display, :section_name, :image, :author) ";
 

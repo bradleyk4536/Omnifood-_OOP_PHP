@@ -31,7 +31,7 @@ if(isset($_POST['submit'])) :
 				  else :
 				  	  $media->media_result = $media->set_file($_FILES['media']);
 					  if (!$media->media_result) :
-				  			$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD NEW MEDIA <br>" . $media->file_errors;
+				  			$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE NEW MEDIA <br>" . $media->file_errors;
 				  	  else:
 						$media->save();
 						/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */

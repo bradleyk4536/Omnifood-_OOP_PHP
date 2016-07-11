@@ -28,12 +28,12 @@ if(isset($_POST['submit'])) :
 /*TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
 			if($block->add_up_result) :
 				$block->add_up_result->execute();
-				$session->message = "<i class='ion-happy-outline'></i> SUCCESS &mdash; SECTION HEADER UPDATED <br>";
+				$session->message = "<i class='ion-happy-outline'></i> SUCCESS &mdash; BENEFITS UPDATED <br>";
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
 				Block::notifyMessage($session->message, "success");
 				echo "</div>";
 			else :
-				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE SECTION HEADER";
+				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE BENEFITS";
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
 				Block::notifyMessage($session->message, "failure");
 				echo "</div>";

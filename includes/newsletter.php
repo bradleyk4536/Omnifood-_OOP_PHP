@@ -1,4 +1,4 @@
-<?php $newsletter = Hero::read_all(); ?>
+<?php $newsletter = Populate::hero_section(); ?>
 <!--DISPLAYED ON LANDING PAGE-->
 <section id="newsletter">
 	<div class="container">
