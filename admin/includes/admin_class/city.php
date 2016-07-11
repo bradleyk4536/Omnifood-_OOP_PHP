@@ -1,10 +1,10 @@
 <?php
 	class City extends Media {
-		protected static $find_all_sql = "SELECT * FROM city WHERE section_name = 'cities' ";
+		protected static $find_all_sql = "SELECT * FROM cities WHERE section_name = 'cities' ";
 
 		protected static $create_sql = "INSERT INTO cities(image, name, icon_1, icon_2, social_icon, description_1, description_2, smedia_link, display, section_name) VALUES (:image, :name, :icon_1, :icon_2, :social_icon, :description_1, :description_2, :smedia_link, :display, :section_name) ";
 
-		protected static $update_sql = "UPDATE cities SET image=:image, name=:name, icon_1=:icon_1, icon_2=:icon_2, social_icon=:social_icon, description_1=:description_1, description_2=:description_2, display=:display WHERE cities_id = :id ";
+		protected static $update_sql = "UPDATE cities SET image=:image, name=:name, icon_1=:icon_1, icon_2=:icon_2, social_icon=:social_icon, description_1=:description_1, description_2=:description_2, smedia_link=:smedia_link, display=:display WHERE cities_id = :id ";
 
 		protected static $find_by_id_sql = "SELECT * FROM cities WHERE cities_id = :id ";
 
@@ -25,7 +25,7 @@
 			/*	CAPTURE IMAGE FILE DATA IF NOT CHANGED DURING UPDATE */
 		public function save_file_data($fileData) {
 		if(!empty($fileData)) :
-			$this->filename = $fileData->logo;
+			$this->filename = $fileData->image;
 		endif;
 	}
 
@@ -60,7 +60,7 @@
 		endif;
 
 		if($control === "update") :
-			$this->hero_id = static::val_int($_GET['id']);
+			$this->cities_id = static::val_int($_GET['id']);
 			$result->bindParam(':id', $this->cities_id, PDO::PARAM_INT);
 		endif;
 

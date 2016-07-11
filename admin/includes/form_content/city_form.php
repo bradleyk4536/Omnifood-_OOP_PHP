@@ -1,5 +1,6 @@
 <form action="" method="post" enctype="multipart/form-data">
-	<div class="col-md-8">
+	<div class="row">
+		<div class="col-md-8">
 		<div class="form-group">
 			<label for="news_text">City Name</label>
 			<input type="text" name="name" class="form-control" value="<?php echo $city->name; ?>">
@@ -34,6 +35,7 @@
 		</div>
 		</div>
 		</div>
+	</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4">

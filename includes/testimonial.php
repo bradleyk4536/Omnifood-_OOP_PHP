@@ -1,6 +1,6 @@
 <?php
-$headers 		= Populate::testimonialHeader();
-$testimonials 	= Populate::testimonial();
+$headers 		= Populate::getHeader('section', 'testimonial');
+$testimonials 	= Populate::getBody('testimonial');
 ?>
 <section id="testimonial">
 	<div class="container">

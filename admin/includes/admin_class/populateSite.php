@@ -24,19 +24,18 @@
 			if($result) : return $result; else : return false; endif;
 		}
 
-		public static function testimonialHeader() {
-			static::$find_all_sql = "SELECT * FROM section WHERE display = 'true' AND section_name = 'testimonial' ";
+		public static function getHeader($table, $section) {
+			static::$find_all_sql = "SELECT * FROM {$table} WHERE display = 'true' AND section_name = '{$section}' ";
 
 			$result = static::read_all();
 			if($result) : return $result; else : return false; endif;
 		}
 
-		public static function testimonial() {
-			static::$find_all_sql = "SELECT * FROM testimonial WHERE display = 'true' AND section_name = 'testimonial' ";
+		public static function getBody($section) {
+			static::$find_all_sql = "SELECT * FROM {$section} WHERE display = 'true' AND section_name = '{$section}' ";
 
 			$result = static::read_all();
 			if($result) : return $result; else : return false; endif;
-
 		}
 	}
 

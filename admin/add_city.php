@@ -35,6 +35,7 @@ endif;
 				<h1 class="page-header">Omnifoods &mdash; <small>Add City</small> </h1>
 				<ol class="breadcrumb">
 				 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Site Manager</a></li>
+				 <li><i class="ion-ios-home"></i>&emsp;<a href="../index.php">Add City</a></li>
 				 <li><i class="ion-ios-camera"></i>&emsp;<a href="../index.php">View Site</a></li>
 				</ol>
 					<?php if($city->add_up_result && isset($session->message)) : ?>

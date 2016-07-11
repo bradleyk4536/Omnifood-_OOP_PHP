@@ -1,65 +1,35 @@
+<?php
+	$headers = Populate::getHeader('section', 'cities');
+	$cities	= Populate::getBody('cities', 'cities');
+?>
 <section id="cities">
 	<div class="container">
+
+	<?php foreach( $headers as $header ) : ?>
 		<div class="section_header">
-			<h2>Were Currently In These Cities</h2>
+			<h2><?php echo $header->title; ?></h2>
 		</div>
+	<?php endforeach; ?>
+
 		<div class="row">
+
+			<?php foreach( $cities as $city ) :?>
 				<div class="col-sm-3">
-					<img src="assets/images/lisbon-3.jpg" alt="Lisbon">
-					<h3>LISBON</h3>
+					<img src="admin/media/<?php echo $city->image; ?>" alt="<?php echo $city->name; ?>">
+					<h3><?php echo $city->name; ?></h3>
 					<div class="city-feature">
-						<i class="ion-ios-people-outline icon-small"></i>1600&#43; happy eaters
+						<i class="<?php echo $city->icon_1; ?> icon-small"></i><?php echo $city->description_1; ?>
 					</div>
 					<div class="city-feature">
-						<i class="ion-android-restaurant icon-small"></i>60&#43; top chefs
+						<i class="<?php echo $city->icon_2; ?> icon-small"></i><?php echo $city->description_2; ?>
 					</div>
 					<div class="city-feature">
-						<i class="ion-social-twitter-outline icon-small"></i>
-						<a href="#" class="fmt-link">@omnifood_1x</a>
+						<i class="<?php echo $city->social_icon; ?> icon-small"></i>
+						<a href="#" class="fmt-link"><?php echo $city->smedia_link; ?></a>
 					</div>
 				</div>
-				<div class="col-sm-3">
-					<img src="assets/images/san-francisco.jpg" alt="San Francisco">
-					<h3>San Francisco</h3>
-					<div class="city-feature">
-						<i class="ion-ios-people-outline icon-small"></i>1600&#43; happy eaters
-					</div>
-					<div class="city-feature">
-						<i class="ion-android-restaurant icon-small"></i>160&#43; top chefs
-					</div>
-					<div class="city-feature">
-						<i class="ion-social-twitter-outline icon-small"></i>
-						<a href="#" class="fmt-link">@omnifood_sf</a>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<img src="assets/images/berlin.jpg" alt="Berlin">
-					<h3>Berlin</h3>
-					<div class="city-feature">
-						<i class="ion-ios-people-outline icon-small"></i>1600&#43; happy eaters
-					</div>
-					<div class="city-feature">
-						<i class="ion-android-restaurant icon-small"></i>110&#43; top chefs
-					</div>
-					<div class="city-feature">
-						<i class="ion-social-twitter-outline icon-small"></i>
-						<a href="#" class="fmt-link">@omnifood_berlin</a>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<img src="assets/images/london.jpg" alt="London">
-					<h3>London</h3>
-					<div class="city-feature">
-						<i class="ion-ios-people-outline icon-small"></i>1600&#43; happy eaters
-					</div>
-					<div class="city-feature">
-						<i class="ion-android-restaurant icon-small"></i>50&#43; top chefs
-					</div>
-					<div class="city-feature">
-						<i class="ion-social-twitter-outline icon-small"></i>
-						<a href="#" class="fmt-link">@omnifood_london</a>
-					</div>
-				</div>
+			<?php endforeach; ?>
+
 			</div>
 	</div>
 </section>

@@ -1,5 +1,4 @@
-
-	  <div class="col-md-12">
+<div class="col-md-12">
 	  	<table class="table table-condensed">
 			<thead>
 				<tr>
@@ -20,4 +19,4 @@
 <?php endforeach; ?>
 			</tbody>
 		</table>
-	  </div>
+</div>
