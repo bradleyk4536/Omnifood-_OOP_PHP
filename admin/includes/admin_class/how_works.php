@@ -1,7 +1,6 @@
 <?php
 	class Works extends Media {
 
-		//protected static $find_all_sql 	= "SELECT * FROM how_works WHERE display = 'true' ";
 		protected static $find_all_sql 	= "SELECT * FROM how_works WHERE section_name = 'how_works' ";
 
 		protected static $create_sql = "INSERT INTO how_works(instruction, image, section_name, display) VALUES (:instruction, :image, :section_name, :display) ";

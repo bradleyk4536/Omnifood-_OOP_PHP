@@ -16,6 +16,7 @@
 	require_once(INCLUDES_PATH.DS."admin_class/testimonial.php");
 	require_once(INCLUDES_PATH.DS."admin_class/populateSite.php");
 	require_once(INCLUDES_PATH.DS."admin_class/how_works.php");
+	require_once(INCLUDES_PATH.DS."admin_class/city.php");
 //	require_once(INCLUDES_PATH.DS."comment.php");
 	require_once(INCLUDES_PATH.DS."admin_class/session.php");
 //	require_once(INCLUDES_PATH.DS."paginate.php");
