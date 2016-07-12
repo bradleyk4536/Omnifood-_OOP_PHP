@@ -2,8 +2,8 @@
 	<table class="table table-condensed">
 		<thead>
 			<tr>
-				<th class="col-md-4">Instruction</th>
-				<th class="col-md-2">Display</th>
+				<th class="col-md-5">Instruction</th>
+				<th class="col-md-5">Display</th>
 				<th></th>
 			</tr>
 		</thead>

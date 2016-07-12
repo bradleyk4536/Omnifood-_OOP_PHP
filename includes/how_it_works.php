@@ -34,8 +34,6 @@
 				<a href="#" class="btn-app"><img src="assets/images/download-app-android.png" alt="Google Play"></a>
 				<a href="#" class="btn-app"><img src="assets/images/download-app.svg" alt="Apple Store"></a>
 			</div>
-
-
 		</div>
 	</div>
 </section>

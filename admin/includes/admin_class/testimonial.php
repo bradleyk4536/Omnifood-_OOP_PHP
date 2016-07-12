@@ -11,7 +11,7 @@ class Testimonial extends Media {
 
 	public $testimonial_id;
 	public $testimonial;
-	public $display;
+	public $display = false;
 	public $section_name;
 	public $image;
 	public $author;

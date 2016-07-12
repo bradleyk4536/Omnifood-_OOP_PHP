@@ -17,7 +17,7 @@
 			$result = static::read_all();
 			if($result) : return $result; else : return false; endif;
 		}
-
+/* POPULATE BODY OF EACH SECTION */
 		public static function getBody($table, $section) {
 			static::$find_all_sql = "SELECT * FROM {$table} WHERE display = 'true' AND section_name = '{$section}' ";
 
@@ -25,5 +25,4 @@
 			if($result) : return $result; else : return false; endif;
 		}
 	}
-
 ?>

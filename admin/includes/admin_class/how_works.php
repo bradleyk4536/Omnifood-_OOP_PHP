@@ -13,7 +13,7 @@
 		public $image;
 		public $instruction;
 		public $section_name;
-		public $display;
+		public $display = false;
 		public $add_up_result;
 
 				/*	CAPTURE IMAGE FILE DATA IF NOT CHANGED DURING UPDATE OVERRIDE*/
