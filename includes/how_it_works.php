@@ -1,28 +1,41 @@
+<?php
+	$headers 	= Populate::getHeader('section', 'how_works');
+	$instructs 	= Populate::getBody('how_works', 'how_works');
+?>
 <section id="how_it_works">
 	<div class="container">
+
+	<?php foreach( $headers as $header ) : ?>
 		<div class="section_header">
-			<h2>How It Works &mdash; Simple as 1, 2, 3</h2>
+			<h2><?php echo $header->title; ?></h2>
 		</div>
+	<?php endforeach; ?>
+
 		<div class="row">
+
+	<?php foreach( $instructs as $instruct ) : ?>
+		<?php if(!empty($instruct->image)) : ?>
 			<div class="col-sm-6 phone">
-				<img src="assets/images/app-iPhone.png" alt="" class="app-screen js--wp-2">
+				<img src="admin/media/<?php echo $instruct->image; ?>" alt="" class="app-screen js--wp-2">
 			</div>
+		<?php endif; ?>
+	<?php endforeach; ?>
+
 			<div class="col-sm-6">
+		<?php $counter = 0; ?>
+		<?php foreach( $instructs as $instruct ) : ?>
+			<?php $counter++; ?>
 				<div class="work-steps clearfix">
-				<span>1.</span>
-				<p>Choose you subscription plan that best fits your needs and sign up today.</p>
+				<span> <?php echo $counter; ?>.</span>
+				<p><?php echo $instruct->instruction; ?></p>
 				</div>
-				<div class="work-steps clearfix">
-				<span>2.</span>
-				<p>Order you delicious meal using our mobile app or website. You can even go old school and call us&#33;</p>
-				</div>
-				<div class="work-steps clearfix">
-				<span>3.</span>
-				<p>Enjoy you meal after less than 20 minutes. See you next time &#33;</p>
-				</div>
+		<?php endforeach; ?>
+
 				<a href="#" class="btn-app"><img src="assets/images/download-app-android.png" alt="Google Play"></a>
 				<a href="#" class="btn-app"><img src="assets/images/download-app.svg" alt="Apple Store"></a>
 			</div>
+
+
 		</div>
 	</div>
 </section>

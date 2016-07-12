@@ -1,6 +1,6 @@
 <?php
-$headers = Populate::foodHeader();
-$benefits = Populate::foodBenefits();
+$headers  = Populate::getHeader('section', 'get_food');
+$benefits = Populate::getBody('block_benefits', 'get_food');
 ?>
 <section id="get_food_fast">
 	<div class="container">

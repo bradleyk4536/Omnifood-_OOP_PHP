@@ -1,4 +1,4 @@
-<?php $navs = Hero::read_all(); ?>
+<?php $navs = Populate::hero_section(); ?>
 <header class="site-header" role="banner"><!--	NAVBAR-->
 	<div class="navbar-wraper">
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
