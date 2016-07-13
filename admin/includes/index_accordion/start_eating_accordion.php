@@ -6,7 +6,7 @@ $start_eating = Plan::read_all();
 <h3><a href="#"><strong>Start Eating Healthy</strong></a></h3>
 <div>
 		<ol class="breadcrumb">
-			<li><i class="fa fa-indent"></i><a href="add_header.php?header=get_food"> Add Section Header</a></li>
+			<li><i class="fa fa-indent"></i><a href="add_header.php?header=start_eating"> Add Section Header</a></li>
 		</ol>
 	<section><?php include "accordion_header_content.php"; ?></section>
 		<ol class="breadcrumb">
