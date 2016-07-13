@@ -14,7 +14,7 @@
 		 <!-- Page Heading -->
 		 <div class="row">
 			  <div class="col-lg-12">
-					<h1 class="page-header">Omnifoods &mdash; <small>Update Testimonial</small> </h1>
+					<h1 class="page-header">Omnifoods &mdash; <small>Update Dish</small> </h1>
 				<ol class="breadcrumb">
 				 <li><i class="fa fa-dashboard"></i>  <a href="index.php">Site Manager</a></li>
 				 <li><i class="ion-ios-camera"></i>  <a href="../index.php">View Site</a></li>
