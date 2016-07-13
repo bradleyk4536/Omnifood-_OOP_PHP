@@ -2,15 +2,15 @@
 
 	<div class="col-md-8">
 		<div class="form-group">
-			<label for="section_title">Icon</label>
+			<label for="icon">Icon</label>
 			<input type="text" class="form-control" name="icon" value="<?php echo $section->icon; ?>">
 		</div>
 		<div class="form-group">
-			<label for="section_title">Title</label>
+			<label for="title">Title</label>
 			<input type="text" class="form-control" name="title" value="<?php echo $section->title; ?>" required>
 		</div>
 		<div class="form-group">
-			<label for="brand_text">Description</label>
+			<label for="description">Description</label>
 			<textarea name="description" id="" cols="30" rows="10" class="form-control"><?php echo $section->description; ?></textarea>
 		</div>
 	</div>

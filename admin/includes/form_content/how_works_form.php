@@ -2,11 +2,11 @@
 
 	<div class="col-md-8">
 		<div class="form-group">
-			<label for="instruct_1">Instruction</label>
+			<label for="instruction">Instruction</label>
 			<input type="text" class="form-control" name="instruction" value="<?php echo $how_works->instruction; ?>">
 		</div>
 		<div class="form-group">
-			<label for="logo_image">Image</label>
+			<label for="how_works">Image</label>
 			<a class="thumbnail" href="#">
 				<img class="logo" src="media/<?php echo $how_works->image; ?>" alt="">
 				<input type="file" name="how_works">

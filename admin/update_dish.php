@@ -6,8 +6,8 @@
 	if(empty($_GET['id'])) :
 		redirect_to("index.php");
 	endif;
-	$testimonial = Testimonial::find_by_id($_GET['id']);
-	$saveImage = $testimonial;
+	$dish = Dish::find_by_id($_GET['id']);
+	$saveImage = $dish;
 ?>
 <div id="page-wrapper">
 	<div class="container-fluid">
@@ -21,42 +21,42 @@
 				</ol>
 <?php
 if(isset($_POST['submit'])) :
-	$testimonial = new Testimonial;
-	if($testimonial) :
+	$dish = new Dish;
+	if($dish) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
-		if(!empty($_POST['testimonial'])) :
-			$testimonial->save_file_data($saveImage);
+		if(!empty($_POST['name'])) :
+			$dish->save_file_data($saveImage);
 				if(empty($_FILES['image'])) :
 				  	/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
-				  $testimonial->add_up_result = $testimonial->add_update("update");
+				  $dish->add_up_result = $dish->add_update("update");
 				  else :
-				  	  $testimonial->image = $testimonial->set_file($_FILES['image']);
-					  if (!$testimonial->image) :
-				  			$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD NEW IMAGE <br>" . $testimonial->file_errors;
+				  	  $dish->image = $dish->set_file($_FILES['testimonial']);
+					  if (!$dish->image) :
+				  			$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD NEW IMAGE <br>" . $dish->file_errors;
 				  	  else:
-						$testimonial->save();
+						$dish->save();
 						/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
 				  	  endif;
-				  $testimonial->add_up_result = $testimonial->add_update("update");
+				  $dish->add_up_result = $dish->add_update("update");
 				endif;
 /*TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
-			if($testimonial->add_up_result) :
-				$testimonial->add_up_result->execute();
+			if($dish->add_up_result) :
+				$dish->add_up_result->execute();
 				$session->message = "<i class='ion-happy-outline'></i> SUCCESS &mdash; TESTIMONIAL UPDATED <br>";
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
-				Testimonial::notifyMessage($session->message, "success");
+				Dish::notifyMessage($session->message, "success");
 				echo "</div>";
 			else :
 				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE TESTIMONIAL";
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
-				Testimonial::notifyMessage($session->message, "failure");
+				Dish::notifyMessage($session->message, "failure");
 				echo "</div>";
 			endif;
 		endif;
 	endif;
 endif;
 ?>
-<?php require_once "includes/form_content/testimonial_form.php"; ?>
+<?php require_once "includes/form_content/dish_form.php"; ?>
 			  </div>
 		 </div>
 <?php require_once "delete_media.php"; ?><!-- /.row -->

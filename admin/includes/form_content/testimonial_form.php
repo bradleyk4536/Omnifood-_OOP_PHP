@@ -2,18 +2,18 @@
 
 	<div class="col-md-8">
 		<div class="form-group">
-			<label for="brand_text">Testimonial</label>
+			<label for="testimonial">Testimonial</label>
 			<textarea name="testimonial" id="" cols="30" rows="10" class="form-control"><?php echo $testimonial->testimonial; ?></textarea>
 		</div>
 		<div class="form-group">
-			<label for="section_title">Author Name</label>
+			<label for="author">Author Name</label>
 			<input type="text" class="form-control" name="author" value="<?php echo $testimonial->author; ?>" required>
 		</div>
 		<div class="form-group">
-		<label for="logo_image">Author Image</label>
+		<label for="image">Author Image</label>
 		<a class="thumbnail" href="#">
 			<img class="logo" src="media/<?php echo $testimonial->image; ?>" alt="">
-			<input type="file" name="testimonial">
+			<input type="file" name="image">
 		</a>
 		</div>
 

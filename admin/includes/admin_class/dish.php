@@ -40,8 +40,8 @@ class Dish extends Media {
 		$result->bindParam(':display', $this->display, PDO::PARAM_STR);
 
 		if($control === "add") :
-		$this->section_name	  = static::val_string($_GET['section']);
-		$result->bindParam(':section_name', $this->section_name, PDO::PARAM_STR);
+			$this->section_name	  = static::val_string($_GET['section']);
+			$result->bindParam(':section_name', $this->section_name, PDO::PARAM_STR);
 		endif;
 
 		$result->bindParam(':image', $this->image, PDO::PARAM_STR);

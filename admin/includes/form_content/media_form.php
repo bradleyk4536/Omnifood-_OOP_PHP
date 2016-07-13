@@ -11,7 +11,7 @@
 			<input type="text" name="caption" class="form-control" value="<?php echo $media->caption; ?>">
 		</div>
 		<div class="form-group">
-			<label for="caption">Alternate Text</label>
+			<label for="alternate_text">Alternate Text</label>
 			<input type="text" name="alternate_text" class="form-control" value="<?php echo $media->alternate_text; ?>">
 		</div>
 

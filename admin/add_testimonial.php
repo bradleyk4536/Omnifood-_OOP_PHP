@@ -7,7 +7,7 @@ if(isset($_POST['submit'])) :
 	if($testimonial) :
 			/* CHECK TO SEE IF ALL FIELDS ARE FILLED IN BEFORE GOING ON*/
 		if(!empty($_POST['testimonial'])) :
-			$testimonial->image = $testimonial->set_file($_FILES['testimonial']);
+			$testimonial->image = $testimonial->set_file($_FILES['image']);
 			if(!$testimonial->image) :
 				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD <br> LOGO IMAGE"; //. $media->file_errors;
 			else:

@@ -2,13 +2,13 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-			<label for="brand_icon">Plan</label>
+			<label for="plan_name">Plan</label>
 			<input type="text" name="plan_name" class="form-control" value="<?php echo $plan->plan_name; ?>">
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="brand_text">Plan Price</label>
+				<label for="plan_price">Plan Price</label>
 			<input type="text" name="plan_price" class="form-control" value="<?php echo $plan->plan_price; ?>">
 			</div>
 		</div>
@@ -18,7 +18,7 @@
 <div class="row">
 	<div class="col-md-8">
 		<div class="form-group">
-			<label for="news_text">Plan Description</label>
+			<label for="plan_description">Plan Description</label>
 			<input type="text" name="plan_description" class="form-control" value="<?php echo $plan->plan_description; ?>">
 		</div>
 	</div>
@@ -56,13 +56,13 @@
 <div class="row">
 	<div class="col-md-4">
 			<div class="form-group">
-			<label for="brand_icon">Plan Icon</label>
+			<label for="plan_icon1">Plan Icon</label>
 			<input type="text" name="plan_icon1" class="form-control" value="<?php echo $plan->plan_icon1; ?>">
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="brand_text">Plan Feature</label>
+				<label for="plan_feature1">Plan Feature</label>
 			<input type="text" name="plan_feature1" class="form-control" value="<?php echo $plan->plan_feature1; ?>">
 			</div>
 		</div>
@@ -70,7 +70,7 @@
 <div class="row">
 	<div class="col-md-4">
 			<div class="form-group">
-			<label for="brand_icon">Plan Icon</label>
+			<label for="plan_icon2">Plan Icon</label>
 			<input type="text" name="plan_icon2" class="form-control" value="<?php echo $plan->plan_icon2; ?>">
 			</div>
 		</div>
@@ -84,13 +84,13 @@
 <div class="row">
 	<div class="col-md-4">
 			<div class="form-group">
-			<label for="brand_icon">Plan Icon</label>
+			<label for="plan_feature2">Plan Icon</label>
 			<input type="text" name="plan_icon3" class="form-control" value="<?php echo $plan->plan_icon3; ?>">
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="brand_text">Plan Feature</label>
+				<label for="plan_feature3">Plan Feature</label>
 			<input type="text" name="plan_feature3" class="form-control" value="<?php echo $plan->plan_feature3; ?>">
 			</div>
 		</div>
@@ -98,16 +98,15 @@
 <div class="row">
 	<div class="col-md-4">
 			<div class="form-group">
-			<label for="brand_icon">Plan Icon</label>
+			<label for="plan_icon4">Plan Icon</label>
 			<input type="text" name="plan_icon4" class="form-control" value="<?php echo $plan->plan_icon4; ?>">
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="brand_text">Plan Feature</label>
+				<label for="plan_feature4">Plan Feature</label>
 			<input type="text" name="plan_feature4" class="form-control" value="<?php echo $plan->plan_feature4; ?>">
 			</div>
 		</div>
 </div>
-
 </form>

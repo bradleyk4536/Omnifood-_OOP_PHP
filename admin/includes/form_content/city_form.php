@@ -2,11 +2,11 @@
 	<div class="row">
 		<div class="col-md-8">
 		<div class="form-group">
-			<label for="news_text">City Name</label>
+			<label for="name">City Name</label>
 			<input type="text" name="name" class="form-control" value="<?php echo $city->name; ?>">
 		</div>
 		<div class="form-group">
-		<label for="logo_image">City Image</label>
+		<label for="image">City Image</label>
 		<a class="thumbnail" href="#">
 			<img class="logo" src="media/<?php echo $city->image; ?>" alt="">
 			<input type="file" name="image">
@@ -40,13 +40,13 @@
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-			<label for="brand_icon">Feature Icon</label>
+			<label for="icon_1">Feature Icon</label>
 			<input type="text" name="icon_1" class="form-control" value="<?php echo $city->icon_1; ?>">
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="brand_text">Feature</label>
+				<label for="description_1">Feature</label>
 			<input type="text" name="description_1" class="form-control" value="<?php echo $city->description_1; ?>">
 			</div>
 		</div>
@@ -54,25 +54,25 @@
 	<div class="row">
 		<div class="col-md-4">
 		 	<div class="form-group">
-		 		<label for="brand_icon">Feature Icon</label>
+		 		<label for="icon_2">Feature Icon</label>
 			<input type="text" name="icon_2" class="form-control" value="<?php echo $city->icon_2; ?>">
 		 	</div>
 		</div>
 		<div class="col-md-4">
-			<label for="brand_text">Feature</label>
+			<label for="description_2">Feature</label>
 			<input type="text" name="description_2" class="form-control" value="<?php echo $city->description_2; ?>">
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="brand_icon">Social Media Icon</label>
+				<label for="social_icon">Social Media Icon</label>
 			<input type="text" name="social_icon" class="form-control" value="<?php echo $city->social_icon; ?>">
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="form-group">
-				<label for="brand_text">Social Media</label>
+				<label for="smedia_link">Social Media</label>
 			<input type="text" name="smedia_link" class="form-control" value="<?php echo $city->smedia_link; ?>">
 			</div>
 		</div>
