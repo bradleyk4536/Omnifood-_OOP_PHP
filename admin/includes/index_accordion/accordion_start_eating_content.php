@@ -6,7 +6,6 @@
 				<th class="col-md-3">Price</th>
 				<th class="col-md-4">Description</th>
 				<th class="col-md-4">Display</th>
-
 				<th></th>
 			</tr>
 		</thead>
@@ -22,4 +21,5 @@
 <?php endforeach; ?>
 		</tbody>
 	</table>
+	<h6 class="text-center">NOTE: NO MORE THAN THREE PLANS CAN BE SET TO DISPLAY TRUE </h6>
 </div>

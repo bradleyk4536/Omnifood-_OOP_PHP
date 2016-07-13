@@ -4,7 +4,7 @@
 
 		protected static $create_sql = "INSERT INTO plans(plan_name, plan_price, plan_description, plan_icon1, plan_feature1, plan_icon2, plan_feature2, plan_icon3, plan_feature3, plan_icon4, plan_feature4, display, section_name) VALUES (:plan_name, :plan_price, :plan_description, :plan_icon1, :plan_feature1, :plan_icon2, :plan_feature2, :plan_icon3, :plan_feature3, :plan_icon4, :plan_feature4, :display, :section_name) ";
 
-		protected static $update_sql = "UPDATE cities SET plan_name=:plan_name, plan_price=:plan_price, plan_description=:plan_description, plan_icon1=:plan_icon1, plan_feature1=:plan_feature1, plan_icon2=:plan_icon2, plan_feature2=:plan_feature2, plan_icon3=:plan_icon3, plan_feature3=:plan_feature3, plan_icon4=:plan_icon4, plan_feature4=:plan_feature4, display=:display WHERE cities_id = :id ";
+		protected static $update_sql = "UPDATE plans SET plan_name=:plan_name, plan_price=:plan_price, plan_description=:plan_description, plan_icon1=:plan_icon1, plan_feature1=:plan_feature1, plan_icon2=:plan_icon2, plan_feature2=:plan_feature2, plan_icon3=:plan_icon3, plan_feature3=:plan_feature3, plan_icon4=:plan_icon4, plan_feature4=:plan_feature4, display=:display WHERE plan_id = :id ";
 
 		protected static $find_by_id_sql = "SELECT * FROM plans WHERE plan_id = :id ";
 

@@ -19,4 +19,5 @@
 <?php endforeach; ?>
 		</tbody>
 	</table>
+	<h6 class="text-center">NOTE: NO MORE THAN FOUR BENEFTIS CAN BE SET TO DISPLAY TRUE </h6>
 </div>

@@ -33,6 +33,7 @@ $heros = Hero::read_all();
 <?php endforeach; ?>
 			</tbody>
 		</table>
+		<h6 class="text-center">NOTE: ONLY ONE SECTION CAN BE SET TO DISPLAY TRUE </h6>
 	  </div>
 
 
