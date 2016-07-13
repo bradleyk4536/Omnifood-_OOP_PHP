@@ -1,63 +1,50 @@
+<?php
+	$headers = Populate::getHeader('section', 'start_eating');
+	$plans = Populate::getBody('plans', 'start_eating');
+?>
 <section id="call_to_action">
 	<div class="container">
+
+	<?php foreach( $headers as $header ) : ?>
 		<div class="section_header">
-			<h2>Start Eating Healthy Today</h2>
+			<h2><?php echo $header->title; ?></h2>
 		</div>
+	<?php endforeach; ?>
+
 		<div class="row">
+
+		<?php foreach( $plans as $plan ) :?>
 			<div class="col-sm-4">
 				<div class="plan-box">
 				<div>
-					<h3>Premium</h3>
-					<p><span>&#36;399</span> <span> / month</span></p>
-					<p>That&#39;s only &#36;13.30 per meal.</p>
+					<h3><?php echo $plan->plan_name; ?></h3>
+					<p><span><?php echo $plan->plan_price; ?></span></p>
+
+				<?php if(!empty($plan->plan_description)) : ?>
+					<p><?php echo $plan->plan_description; ?></p>
+				<?php else : ?>
+				  <p>&emsp;</p>
+				<?php endif; ?>
+
 				</div>
 				<div>
 					<ul>
-						<li><i class="ion-checkmark icon-small"></i>1 meal every day</li>
-						<li><i class="ion-checkmark icon-small"></i>Order 24/7</li>
-						<li><i class="ion-checkmark icon-small"></i>Access to newest creations</li>
-						<li><i class="ion-checkmark icon-small"></i>Free delivery</li>
+						<li><i class="<?php echo $plan->plan_icon1; ?> icon-small"></i><?php echo $plan->plan_feature1; ?></li>
+						<li><i class="<?php echo $plan->plan_icon2; ?> icon-small"></i><?php echo $plan->plan_feature2; ?></li>
+						<li><i class="<?php echo $plan->plan_icon3; ?> icon-small"></i><?php echo $plan->plan_feature3; ?></li>
+
+					<?php if (!empty($plan->plan_icon4) || !empty ($plan->plan_feature4)) : ?>
+						<li><i class="<?php echo $plan->plan_icon4; ?> icon-small"></i><?php echo $plan->plan_feature4; ?></li>
+					<?php else : ?>
+					 	<li class='icon-small'>&emsp;</li>
+					<?php endif; ?>
+
 					</ul>
 				</div>
-				<div><a href="#" class="btn btn-full btn-lg">Sign up now</a></div>
+				<div><a href="#" class="btn <?php echo $plan->action; ?> btn-lg">Sign up now</a></div>
 				</div>
 			</div>
-			<div class="col-sm-4">
-			<div class="plan-box">
-				<div>
-					<h3>Pro</h3>
-					<p><span>&#36;149</span> <span> / month</span></p>
-					<p>That&#39;s only &#36;14.90 per meal.</p>
-				</div>
-				<div>
-					<ul>
-						<li><i class="ion-checkmark icon-small"></i>1 meal 10 days / month</li>
-						<li><i class="ion-checkmark icon-small"></i>Order 24/7</li>
-						<li><i class="ion-checkmark icon-small"></i>Access to newest creations</li>
-						<li><i class="ion-checkmark icon-small"></i>Free delivery</li>
-					</ul>
-				</div>
-				<div><a href="#" class="btn btn-ghost btn-lg">Sign up now</a></div>
-				</div>
-			</div>
-			<div class="col-sm-4">
-			<div class="plan-box">
-				<div>
-					<h3>Starter</h3>
-					<p><span>&#36;19.00</span> <span> / meal</span></p>
-					<p>&emsp;</p>
-				</div>
-				<div>
-					<ul>
-						<li><i class="ion-checkmark icon-small"></i>1 meal</li>
-						<li><i class="ion-checkmark icon-small"></i>Order from 8 am to 12 pm</li>
-						<li><i class="ion-checkmark icon-small"></i>Free delivery</li>
-						<li class="icon-small">&emsp;</li>
-					</ul>
-				</div>
-				<div><a href="#" class="btn btn-ghost btn-lg">Sign up now</a></div>
-			</div>
-			</div>
+		<?php endforeach; ?>
 		</div>
 	</div>
 </section>

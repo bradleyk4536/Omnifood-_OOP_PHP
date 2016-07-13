@@ -36,6 +36,13 @@
 			 <input type="radio" name="display" value="true" <?php if(isset($plan->display) && $plan->display === "true") echo 'checked'?>> Yes <br>
 			 <input type="radio" name="display" value="false" <?php if(isset($plan->display) && $plan->display === "false") echo 'checked'; ?>>No
 		 </div>
+		 <p class="text">
+		  <span class="ion-ios-monitor-outline"></span> Primary call to action button
+		 </p>
+		 <div class="form-group">
+			 <input type="radio" name="action" value="btn-full" <?php if(isset($plan->action) && $plan->action === "btn-full") echo 'checked'?>> Yes <br>
+			 <input type="radio" name="action" value="btn-ghost" <?php if(isset($plan->action) && $plan->action === "btn-ghost") echo 'checked'; ?>>No
+		 </div>
 		<div class="info-box-footer clearfix">
 	  <div class="info-box-update pull-right ">
 			<input type="submit" name="submit" value="Update" class="btn btn-primary btn-lg ">
