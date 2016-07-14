@@ -30,7 +30,7 @@ if(isset($_POST['submit'])) :
 				  	/* BIND INPUTS TO PREPARE STATEMENT BINDPARAMS */
 				  $dish->add_up_result = $dish->add_update("update");
 				  else :
-				  	  $dish->image = $dish->set_file($_FILES['testimonial']);
+				  	  $dish->image = $dish->set_file($_FILES['image']);
 					  if (!$dish->image) :
 				  			$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO ADD NEW IMAGE <br>" . $dish->file_errors;
 				  	  else:
@@ -42,12 +42,12 @@ if(isset($_POST['submit'])) :
 /*TEST FOR PREPARE STATEMENT THEN EXECUTE IF TRUE */
 			if($dish->add_up_result) :
 				$dish->add_up_result->execute();
-				$session->message = "<i class='ion-happy-outline'></i> SUCCESS &mdash; TESTIMONIAL UPDATED <br>";
+				$session->message = "<i class='ion-happy-outline'></i> SUCCESS &mdash; DISH UPDATED <br>";
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
 				Dish::notifyMessage($session->message, "success");
 				echo "</div>";
 			else :
-				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE TESTIMONIAL";
+				$session->message = "<i class='ion-sad-outline'></i> FAILURE &mdash; UNABLE TO UPDATE DISH";
 				echo "<div class='col-sm-6 col-sm-offset-3'>";
 				Dish::notifyMessage($session->message, "failure");
 				echo "</div>";

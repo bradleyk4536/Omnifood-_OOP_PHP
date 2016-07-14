@@ -15,6 +15,7 @@
 				<a class="navbar-brand" href="index.php"><i class="<?php echo $nav->brand_icon; ?>"></i> <?php echo $nav->brand_text; ?></a>
 				<?php endforeach; ?>
 			 </div><!-- Collect the nav links, forms, and other content for toggling -->
+
 			 <div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
 				  <li class="active"><a href="index.php">Home</a></li>
