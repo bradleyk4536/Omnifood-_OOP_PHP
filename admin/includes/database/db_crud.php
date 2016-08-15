@@ -43,7 +43,7 @@ public static function find_by_id($id) {
 	}
 
 /* USE FOR INTERNAL DATABASE ONLY */
-	private function find_by_query($sql) {
+	public static function find_by_query($sql) {
 		global $database;
 		$result = $database->query_db($sql);
 		$obj_result = $result->fetchAll(PDO::FETCH_OBJ);
