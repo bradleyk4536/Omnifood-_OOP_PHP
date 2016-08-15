@@ -7,9 +7,11 @@
 			<div class="footer_nav pull-right col-sm-6">
 				<nav>
 					<ul>
-						<li class="active"><a href="#">Home</a></li>
+						<li class="active"><a href="index.php">Home</a></li>
+<!--
 						<li><a href="resources.html">Resources</a></li>
 						<li><a href="blog.html">Blog</a></li>
+-->
 						<li><a href="#" data-toggle="modal" data-target="#contact_modal">Contact</a></li>
 					</ul>
 				</nav>

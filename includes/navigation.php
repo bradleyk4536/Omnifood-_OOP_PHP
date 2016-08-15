@@ -22,7 +22,7 @@
 				  <li><a href="menu.php">Menu</a></li>
 				  <li><a href="#" data-toggle="modal" data-target="#contact_modal">Contact</a></li>
 				  <?php if(!$session->is_signed_in()) : ?>
-				  <li><a href="#" data-toggle="modal" data-target="#login_modal">Login</a></li>
+<!--				  <li><a href="#" data-toggle="modal" data-target="#login_modal">Login</a></li>-->
 				  <?php elseif($session->is_signed_in()) : ?>
 				  <li><a href="admin/index.php">Admin</a></li>
 				  <li><a href="admin/includes/logout.php">Logout</a></li>

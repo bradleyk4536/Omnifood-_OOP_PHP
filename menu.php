@@ -15,11 +15,11 @@
 	<div class="row">
 
 <?php foreach( $dishes as $dish ) : ?>
-		<article class="dish col-sm-4">
+		<article class="dish col-sm-6 col-md-4 col-lg-4">
 			<div class="thumbnail">
 				<img src="admin/media/<?php echo $dish->image; ?>" alt="<?php echo $dish->name; ?>">
 			<h3><?php echo $dish->name; ?></h3>
-			<p><?php echo substr($dish->description, 0, 150); ?>...<a href="#"> continue &raquo;</a></p>
+			<p><?php echo substr($dish->description, 0, 75); ?>...<a href="#"> continue &raquo;</a></p>
 			</div>
 		</article>
 <?php endforeach; ?>

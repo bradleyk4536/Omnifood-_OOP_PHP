@@ -139,6 +139,11 @@ div.hero-text h1, div.hero-text h2 { color: #fff; }
 
 .hero-text { margin-top: 100px; }
 
+.hero-text a {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
 /*NEWSLETTER SUBSCRIBE SECTION*/
 
 #newsletter { background-color: #555; padding: 5px}
